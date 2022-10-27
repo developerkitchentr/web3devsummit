@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-    max-width: 1280px!important;
+    max-width: 1280px !important;
 }
 
 .color-white {
@@ -240,6 +240,7 @@ body {
     border-radius: 20px;
     width: 100%;
     position: relative;
+    background-color: #110D38;
 }
 
 .card-epic:before {
@@ -322,4 +323,19 @@ body {
     width: 200px;
     height: 60px;
     object-fit: contain;
+}
+
+.footer-legendary {
+    height: 120px;
+    position: relative;
+}
+
+.footer-legendary:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #CF7BBE 8.72%, #6244EB 60.49%, #60D0DF 101.22%);
 }

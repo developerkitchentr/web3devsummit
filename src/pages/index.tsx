@@ -10,6 +10,7 @@ import JoinTeamScopeLegendary from "../components/legendary/join-team-scope.lege
 import SupportUsScopeLegendary from "../components/legendary/support-us-scope.legendary";
 import TicketScopeLegendary from "../components/legendary/ticket-scope.legendary";
 import OurSupportersScopeLegendary from "../components/legendary/our-supporters-scope.legendary";
+import FooterLegendary from "../components/legendary/footer.legendary";
 
 const Home: NextPage = () => {
     return (
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
                     <OurSupportersScopeLegendary />
                 </>
             </MainLegendary>
+            <FooterLegendary />
         </>
     )
 }

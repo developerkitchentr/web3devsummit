@@ -20,13 +20,9 @@ const PanelistScopeLegendary = () => {
                 { list.map((list, index) => (
                     <CardEpic
                         key={ `panelistler-${ index }` }
-                        image="/images/person.jpg"
+                        image={ `/images/person-0${ index + 1 }.png` }
                         content={ {
-                            name: 'Mehmet Kalyoncu',
-                            title: 'Founder & CEO',
-                            desc: 'Former co-founder of Opendoor. Early staff at Spotify and Clearbit.',
-                            twitter_link: 'https://twitter.com/',
-                            linkedin_link: 'https://www.linkedin.com/'
+                            name: 'Yakında Açıklanacak'
                         } }
                     />
                 )) }
