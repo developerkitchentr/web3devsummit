@@ -1,16 +1,20 @@
 import { memo } from "react";
 
-interface Props {
-    children: string,
-    variant?: string
+const classNames = {
+    root: (variant: string = '') => `button-common ${ variant }`
 }
 
 const ButtonCommon = ({ children, variant }: Props) => {
     return (
-        <button className={`button-common ${variant}`}>
+        <button className={ classNames.root(variant) }>
             { children }
         </button>
     )
+}
+
+interface Props {
+    children: string,
+    variant?: string
 }
 
 export default memo(ButtonCommon)

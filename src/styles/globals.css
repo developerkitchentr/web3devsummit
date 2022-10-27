@@ -29,13 +29,25 @@ body {
     height: 70px;
 }
 
+.list-epic {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
 .list-item-common {
     margin: 4px;
     padding: 4px;
 }
 
-.list-epic {
-    color: #ffffff;
+.list-epic.primary {
+    display: block;
+    align-items: normal;
+}
+
+.list-epic.primary .list-item-common {
+    margin: 4px 0;
+    padding: 0;
 }
 
 .button-common {
@@ -47,6 +59,10 @@ body {
     border-radius: 10px;
     font-weight: 700;
     padding: 10px 18px;
+}
+
+.button-common.min-w {
+    min-width: 200px;
 }
 
 .button-common.primary {
@@ -65,10 +81,17 @@ body {
     border: 2px solid;
     color: #fff;
     border-image: linear-gradient(90deg, #90ECFF 0%, #4B79FF 26%, #8848FB 52%, #D343FF 79%, #FFA7FF 100%) 2;
-
-
 }
 
+.button-common.tertiary {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    background-blend-mode: overlay;
+    border: 1px solid #FFFFFF;
+    backdrop-filter: blur(2px);
+    border-radius: 12px;
+    color: #fff;
+}
 
 .main-banner-epic {
     height: 100vh;
@@ -137,6 +160,22 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 500px;
+    text-align: center;
+}
+
+.scope-headers.secondary {
+    text-align: left;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.scope-headers.secondary h2 {
+    max-width: 340px;
+}
+
+.scope-headers.secondary p {
+    max-width: 620px;
 }
 
 .extent-list-item-common {
@@ -194,6 +233,7 @@ body {
     backdrop-filter: blur(12px);
     border-radius: 16px;
     padding: 16px;
+
 }
 
 .card-epic {
@@ -214,11 +254,23 @@ body {
     background: linear-gradient(90deg, #430062 0%, #420465 14%, #40106F 28%, #3D2580 43%, #394298 58%, #3468B7 73%, #2E95DC 88%, #29C0FF 100%);
 }
 
+.card-epic.primary:before {
+    display: none;
+}
+
 .card-epic .cards-content-common {
     position: absolute;
     right: 16px;
     bottom: 16px;
     left: 16px;
+}
+
+.card-epic.primary .cards-content-common {
+    right: 60px;
+    bottom: auto;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .card-epic-image {
@@ -228,4 +280,46 @@ body {
     min-height: 350px;
     object-fit: cover;
     border-radius: 20px;
+}
+
+.panelist-scope-legendary {
+    margin-bottom: 120px;
+}
+
+.join-team-scope-legendary {
+    margin-bottom: 120px;
+}
+
+.support-us-scope-legendary {
+    margin-bottom: 120px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px;
+    background-image: url("/images/support-bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    position: relative;
+}
+
+.support-us-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.support-us-content {
+    max-width: 650px;
+}
+
+.ticket-scope-legendary {
+    margin-bottom: 120px;
+}
+
+.image-list-image {
+    width: 200px;
+    height: 60px;
+    object-fit: contain;
 }

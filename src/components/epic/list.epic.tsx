@@ -7,10 +7,10 @@ interface Props {
     variant?: string
 }
 
-const ListEpic = ({ list, variant }: Props) => {
+const ListEpic = ({ list, variant = '' }: Props) => {
     return (
-        <ul className={ `list-epic flex items-center ${variant}` }>
-            { list?.map((route, index) => (
+        <ul className={ `list-epic ${ variant }` }>
+            { list.map((route, index) => (
                 <ListItemCommon key={ `${ route.name }-${ index }` } href={ route.href }>
                     { route.name }
                 </ListItemCommon>

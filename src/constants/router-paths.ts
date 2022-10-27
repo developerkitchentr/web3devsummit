@@ -1,6 +1,6 @@
 export interface RouterPaths_ {
     name: string,
-    href: string
+    href?: string
 }
 
 export const ROUTER_PATHS: RouterPaths_[] = [

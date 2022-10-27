@@ -6,6 +6,10 @@ import WhitePaperEpic from "../components/epic/white-paper.epic";
 import ExtentScopeLegendary from "../components/legendary/extent-scope.legendary";
 import MainSliderLegendary from "../components/legendary/main-slider.legendary";
 import PanelistScopeLegendary from "../components/legendary/panelist-scope.legendary";
+import JoinTeamScopeLegendary from "../components/legendary/join-team-scope.legendary";
+import SupportUsScopeLegendary from "../components/legendary/support-us-scope.legendary";
+import TicketScopeLegendary from "../components/legendary/ticket-scope.legendary";
+import OurSupportersScopeLegendary from "../components/legendary/our-supporters-scope.legendary";
 
 const Home: NextPage = () => {
     return (
@@ -18,6 +22,10 @@ const Home: NextPage = () => {
                     <WhitePaperEpic />
                     <ExtentScopeLegendary />
                     <PanelistScopeLegendary />
+                    <JoinTeamScopeLegendary />
+                    <SupportUsScopeLegendary />
+                    <TicketScopeLegendary />
+                    <OurSupportersScopeLegendary />
                 </>
             </MainLegendary>
         </>

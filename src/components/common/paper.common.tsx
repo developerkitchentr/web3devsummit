@@ -1,6 +1,6 @@
 interface Props {
     children: JSX.Element,
-    variant: string
+    variant?: string
 }
 
 const PaperCommon = ({ children, variant }: Props) => {

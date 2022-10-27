@@ -2,7 +2,7 @@ import Link from "next/link";
 import { memo } from "react";
 
 interface Props {
-    href: string;
+    href?: string;
     children: string;
 }
 
@@ -14,7 +14,7 @@ const ListItemCommon = (
 ) => {
     return (
         <li className="list-item-common">
-            <Link href={ href }>{ children }</Link>
+            { href ? <Link href={ href }>{ children }</Link> : children }
         </li>
     )
 }
