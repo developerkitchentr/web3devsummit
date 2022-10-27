@@ -195,3 +195,37 @@ body {
     border-radius: 16px;
     padding: 16px;
 }
+
+.card-epic {
+    border-radius: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.card-epic:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    border-radius: 20px;
+    left: -2px;
+    top: -2px;
+    bottom: -2px;
+    right: -2px;
+    background: linear-gradient(90deg, #430062 0%, #420465 14%, #40106F 28%, #3D2580 43%, #394298 58%, #3468B7 73%, #2E95DC 88%, #29C0FF 100%);
+}
+
+.card-epic .cards-content-common {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+}
+
+.card-epic-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    min-height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
