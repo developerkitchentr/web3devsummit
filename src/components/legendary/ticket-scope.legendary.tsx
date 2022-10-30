@@ -2,14 +2,14 @@ import ScopeHeadersEpic from "../epic/scope-headers.epic";
 import ExtentCellImageCommon from "../common/extent-cell-image.common";
 
 const classNames = {
-    root: 'ticket-scope-legendary grid grid-cols-2 gap-6'
+    root: 'ticket-scope-legendary grid grid-cols-1 sm:grid-cols-2 gap-6'
 }
 
 const text = "Aliquam at felis, velit aenean. Malesuada sit condimentum et, condimentum faucibus et. Eget a commodo rhoncus consectetur pulvinar. Tristique eget nunc sed massa tortor eget pellentesque. Pharetra, quam ut ut ultrices id placerat tellus bibendum."
 
 const TicketScopeLegendary = () => {
     return (
-        <div className={ classNames.root }>
+        <div id="ticket" className={ classNames.root }>
             <ScopeHeadersEpic
                 head="Web3 Developer Summit ‘22 Biletleri"
                 sub={ text }
@@ -17,8 +17,8 @@ const TicketScopeLegendary = () => {
                 button_text="Biletini Ayırt"
             />
             <ExtentCellImageCommon
-                variant="basis-1/2"
                 src="/images/content-02.png"
+                variant="w-100"
             />
         </div>
     );

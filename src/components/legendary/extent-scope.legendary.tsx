@@ -3,7 +3,7 @@ import ExtentCellEpic from "../epic/extent-cell.epic";
 
 const ExtentScopeLegendary = () => {
     return (
-        <div className="extent-scope-legendary">
+        <div id="extent" className="extent-scope-legendary">
             <ScopeHeadersEpic
                 variant="mb-12"
                 head="Kapsam"

@@ -4,12 +4,13 @@ import { RouterPaths_ } from "../../constants/router-paths";
 
 interface Props {
     list: RouterPaths_[],
-    variant?: string
+    variant?: string,
+    menuOpened?: boolean
 }
 
-const ListEpic = ({ list, variant = '' }: Props) => {
+const ListEpic = ({ list, variant = '', menuOpened }: Props) => {
     return (
-        <ul className={ `list-epic ${ variant }` }>
+        <ul className={ `list-epic ${ variant } ${menuOpened ? 'opened' : ''}` }>
             { list.map((route, index) => (
                 <ListItemCommon key={ `${ route.name }-${ index }` } href={ route.href }>
                     { route.name }

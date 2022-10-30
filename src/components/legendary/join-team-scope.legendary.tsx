@@ -2,7 +2,7 @@ import ScopeHeadersEpic from "../epic/scope-headers.epic";
 import CardEpic from "../epic/card.epic";
 
 const classNames = {
-    root: 'grid grid-cols-2 gap-6 join-team-scope-legendary'
+    root: 'grid grid-cols-1 md:grid-cols-2 gap-6 join-team-scope-legendary'
 }
 
 const text = "Aliquam at felis, velit aenean. Malesuada sit condimentum et, condimentum faucibus et. Eget a commodo rhoncus consectetur pulvinar. Tristique eget nunc sed massa tortor eget pellentesque. Pharetra, quam ut ut ultrices id placerat tellus bibendum. Eget a commodo rhoncus consectetur ."

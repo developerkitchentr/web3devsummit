@@ -11,7 +11,7 @@ const classNames = {
 
 const SupportUsScopeLegendary = () => {
     return (
-        <div className={ classNames.root }>
+        <div id="volunteer" className={ classNames.root }>
             <Image
                 className={ classNames.image }
                 src="/images/cta-section-border.svg"

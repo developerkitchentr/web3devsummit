@@ -6,7 +6,7 @@ const classNames = {
 
 const OurSupportersScopeLegendary = () => {
     return (
-        <div className={ classNames.root }>
+        <div id="supporters" className={ classNames.root }>
             <ImageListEpic
                 head="Platin  Destekçilerimiz"
                 image_list={ [

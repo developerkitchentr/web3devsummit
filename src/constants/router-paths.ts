@@ -6,22 +6,22 @@ export interface RouterPaths_ {
 export const ROUTER_PATHS: RouterPaths_[] = [
     {
         name: 'Kapsam',
-        href: '/'
+        href: '#extent'
     },
     {
         name: 'Panelistler',
-        href: '/'
+        href: '#panelist'
     },
     {
-        name: 'Our supporters',
-        href: '/'
+        name: 'Destekçilerimiz',
+        href: '#supporters'
     },
     {
-        name: 'Ticket',
-        href: '/'
+        name: 'Bilet',
+        href: '#ticket'
     },
     {
         name: 'Gönüllü Ol',
-        href: '/'
+        href: '#volunteer'
     }
 ]

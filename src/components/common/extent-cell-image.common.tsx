@@ -2,7 +2,7 @@ import Image from "next/image";
 
 interface Props {
     src: string;
-    variant: string
+    variant?: string
 }
 
 const ExtentCellImageCommon = ({ src, variant }: Props) => {

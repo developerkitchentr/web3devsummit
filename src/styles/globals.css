@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+    scroll-behavior: smooth!important;
+}
+
+.menu-opener {
+    display: none;
+}
+
 .container {
-    max-width: 1280px !important;
+    padding: 0 15px;
 }
 
 .color-white {
@@ -159,7 +167,8 @@ body {
 .scope-headers {
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     text-align: center;
 }
 
@@ -338,4 +347,106 @@ body {
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, #CF7BBE 8.72%, #6244EB 60.49%, #60D0DF 101.22%);
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1023.98px) {
+    .menu-opener {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        z-index: 101;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+        background-color: #333;
+    }
+
+    .change .bar2 {
+        opacity: 0;
+        background-color: #333;
+    }
+
+    .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+        background-color: #333;
+    }
+
+    .header-nav {
+        position: fixed;
+        right: -150%;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 300px;
+        flex-direction: column;
+        background-color: #fff;
+        z-index: 99;
+        padding-top: 50px;
+        transition: all .3s ease;
+    }
+
+    .header-nav.opened {
+        right: 0;
+    }
+
+    .header-nav .list-item-common {
+        color: #000;
+    }
+
+    .footer-list-epic {
+        display: none;
+    }
+}
+
+@media (max-width: 639.98px) {
+    .middle-image {
+        width: 300px;
+    }
+
+    .main-banner-epic {
+        height: 50vh;
+        min-height: 340px;
+        max-height: 640px;
+    }
+
+    .logo-icon {
+        width: 150px;
+    }
+
+    .paper.primary {
+        padding: 15px;
+    }
+
+    .paper.primary .flex {
+        flex-direction: column;
+    }
+
+    .paper.primary .flex > div, .paper.primary .flex .button-common {
+        margin-bottom: 15px;
+    }
+
+    .support-us-scope-legendary {
+        flex-direction: column;
+    }
+
+    .support-us-content {
+        margin-bottom: 20px;
+    }
+
+    .extent-cell-image-common {
+        width: 100%;
+    }
 }
