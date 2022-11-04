@@ -5,14 +5,13 @@ const classNames = {
     root: 'grid grid-cols-1 md:grid-cols-2 gap-6 join-team-scope-legendary'
 }
 
-const text = "Aliquam at felis, velit aenean. Malesuada sit condimentum et, condimentum faucibus et. Eget a commodo rhoncus consectetur pulvinar. Tristique eget nunc sed massa tortor eget pellentesque. Pharetra, quam ut ut ultrices id placerat tellus bibendum. Eget a commodo rhoncus consectetur ."
 
 const JoinTeamScopeLegendary = () => {
     return (
         <div className={ classNames.root }>
             <ScopeHeadersEpic
-                head="Gönüllülük Ekibine Katıl"
-                sub={ text }
+                head="Gönüllü Ekibe Katıl"
+                sub="Web3 geliştirici ekosistemini bir araya getirecek bu etkinlikte sen de gönüllü ol, online ve offline bir çok etkinlikte görev alma şansını yakala"
                 variant="secondary"
                 button_text="Hemen Başvur"
             />
@@ -24,7 +23,7 @@ const JoinTeamScopeLegendary = () => {
                     name: 'Neden',
                     list: [
                         {name: 'Network'},
-                        {name: 'Referans Mektubu'},
+                        {name: 'Katılım sertifikası'},
                         {name: 'Etkinlik Deneyimi'},
                         {name: 'After Party'}
                     ]
@@ -37,10 +36,10 @@ const JoinTeamScopeLegendary = () => {
                     number: '02',
                     name: 'Görevler',
                     list: [
-                        {name: 'Sosyal medya sorumlusu'},
-                        {name: 'Etkinlik alanı'},
-                        {name: 'Ön event organizasyon (online-offline)'},
-                        {name: 'İçerik oluşturma'}
+                        {name: 'Etkinlik alanı görevleri'},
+                        {name: 'Sosyal Medya Yönetimi'},
+                        {name: 'Online Röportajlar'},
+                        {name: 'İçerik Sorumlusu'}
                     ]
                 }}
             />
@@ -53,7 +52,7 @@ const JoinTeamScopeLegendary = () => {
                     list: [
                         {name: 'Başvuru'},
                         {name: 'Değerlendirme'},
-                        {name: 'Online mülakat'},
+                        {name: 'Mülakat'},
                         {name: 'Görevlendirme'}
                     ]
                 }}

@@ -14,7 +14,7 @@ const PanelistScopeLegendary = () => {
             <ScopeHeadersEpic
                 variant="mb-12"
                 head="Panelistler"
-                sub="Risus, auctor sagittis nec pretium id sit faucibus. In elit dignissim vitae diam vestibulum curabitur ac."
+                sub="On-Chain deneyimlerini sizinle paylaşacak panelistlerimiz yakında açıklanacaktır."
             />
             <div className={ classNames.panelistGrid }>
                 { list.map((list, index) => (

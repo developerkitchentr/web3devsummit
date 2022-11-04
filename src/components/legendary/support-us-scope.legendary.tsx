@@ -21,8 +21,9 @@ const SupportUsScopeLegendary = () => {
             <div className={ classNames.content }>
                 <h2 className={ classNames.head }>Bizi Destekleyin</h2>
                 <p className={ classNames.desc }>
-                    Siz de Web3 geliştirici ve yaratıcı ekosistemi destekleyerek adınızı blockchain ekosisteminde
-                    duyurmak ister misiniz? Destek dosyamızı talep ederek bizimle iletişime geçebilirsiniz
+                    Geleceği inşa etme vizyonuna sahip ekipleri bir araya getiren organizasyonumuzu destekleyerek
+                    adınızı blockchain ekosistemindeki bu nitelikli ve niş kitleye duyurup, teknoloji severlere
+                    ulaşabilirsiniz.
                 </p>
             </div>
             <ButtonCommon variant="tertiary min-w">
