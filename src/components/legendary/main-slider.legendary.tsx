@@ -8,27 +8,33 @@ const MainSliderLegendary = () => {
           slidesPerView={3}
           breakpoints={{
               768: {
-                  slidesPerView: 5,
-                  spaceBetween: 60
+                  slidesPerView: 7,
+                  spaceBetween: 10
               },
 
           }}
           className="main-slider-legendary"
       >
           <SwiperSlide>
-              <Image src="/images/bitcoin-logo.svg" alt="" width={240} height={60} />
+              <Image className="slider-img" src="/images/etherium-logo.svg" alt="" width={240} height={60} />
           </SwiperSlide>
           <SwiperSlide>
-              <Image src="/images/etherium-logo.png" alt="" width={240} height={60} />
+              <Image className="slider-img" src="/images/logo-polygon.svg" alt="" width={60} height={60} />
           </SwiperSlide>
           <SwiperSlide>
-              <Image src="/images/solana-logo.svg" alt="" width={240} height={60} />
+              <Image className="slider-img" src="/images/logo-near-protocol.svg" alt="" width={240} height={60} />
           </SwiperSlide>
           <SwiperSlide>
-              <Image src="/images/cardano.png" alt="" width={240} height={60} />
+              <Image className="slider-img" src="/images/logo-stacks.svg" alt="" width={60} height={60} />
           </SwiperSlide>
           <SwiperSlide>
-              <Image src="/images/ripple-logo.svg" alt="" width={240} height={60} />
+              <Image className="slider-img" src="/images/logo-polkadot.svg" alt="" width={240} height={60} />
+          </SwiperSlide>
+          <SwiperSlide>
+              <Image className="slider-img" src="/images/logo-wax.svg" alt="" width={60} height={60} />
+          </SwiperSlide>
+          <SwiperSlide>
+              <Image className="slider-img" src="/images/logo-avalanche.svg" alt="" width={240} height={60} />
           </SwiperSlide>
       </Swiper>
   )

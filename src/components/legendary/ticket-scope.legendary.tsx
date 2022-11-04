@@ -1,5 +1,6 @@
 import ScopeHeadersEpic from "../epic/scope-headers.epic";
 import ExtentCellImageCommon from "../common/extent-cell-image.common";
+import Image from "next/image";
 
 const classNames = {
     root: 'ticket-scope-legendary grid grid-cols-1 sm:grid-cols-2 gap-6'
@@ -16,10 +17,7 @@ const TicketScopeLegendary = () => {
                 variant="secondary"
                 button_text="Biletini Ayırt"
             />
-            <ExtentCellImageCommon
-                src="/images/content-02.png"
-                variant="w-100"
-            />
+            <Image className="w-100 d-block" src="/images/summit.png" alt="" width={650} height={300} />
         </div>
     );
 };

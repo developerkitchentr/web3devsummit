@@ -32,7 +32,7 @@ const JoinTeamScopeLegendary = () => {
             />
             <CardEpic
                 variant="primary"
-                image="/images/join-team-01.jpg"
+                image="/images/join-team-02.jpg"
                 content={{
                     number: '02',
                     name: 'Görevler',
@@ -46,7 +46,7 @@ const JoinTeamScopeLegendary = () => {
             />
             <CardEpic
                 variant="primary"
-                image="/images/join-team-01.jpg"
+                image="/images/join-team-03.jpg"
                 content={{
                     number: '03',
                     name: 'Süreç',

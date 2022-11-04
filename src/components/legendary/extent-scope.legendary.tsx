@@ -9,6 +9,9 @@ const ExtentScopeLegendary = () => {
                 head="Kapsam"
                 sub="Risus, auctor sagittis nec pretium id sit faucibus. In elit dignissim vitae diam vestibulum curabitur ac."
             />
+            <div className="mb-12">
+                <button className="button-common primary mx-auto">Daha fazla bilgi edin</button>
+            </div>
             <ExtentCellEpic
                 extent_head="Paneller"
                 extent_image="/images/content-01.png"
@@ -31,7 +34,7 @@ const ExtentScopeLegendary = () => {
             />
             <ExtentCellEpic
                 extent_head="Network"
-                extent_image="/images/content-02.png"
+                extent_image="/images/content-03.png"
                 extent_icon="/images/featured-icon-3.svg"
                 extent_list={ [
                     { text: "Katılımcı firmalardan teknik ekiplerle buluşma" },

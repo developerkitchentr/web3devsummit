@@ -8,7 +8,7 @@ interface Props {
 const ExtentCellImageCommon = ({ src, variant }: Props) => {
     return (
         <div className={ `extent-cell-image-common ${ variant }` }>
-            <Image className="w-full" src={ src } alt="" width={ 560 } height={ 400 }/>
+            <Image className="w-full" src={ src } alt="" width={ 1100 } height={ 900 }/>
         </div>
     )
 }
