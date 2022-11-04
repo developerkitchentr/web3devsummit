@@ -6,8 +6,8 @@ const ExtentScopeLegendary = () => {
         <div id="extent" className="extent-scope-legendary">
             <ScopeHeadersEpic
                 variant="mb-12"
-                head="Kapsam"
-                sub="Risus, auctor sagittis nec pretium id sit faucibus. In elit dignissim vitae diam vestibulum curabitur ac."
+                head="Kimler Katılmalı"
+                sub="Blockchain ekosisteminde yer alan yaratıcı ve geliştiricilerle iş modelini blockchain temelli teknolojiler ile güçlendirmek isteyen iş geliştirme uzmanları için yepyeni bir deneyim sunuyoruz."
             />
             <div className="mb-12">
                 <button className="button-common primary mx-auto">Daha fazla bilgi edin</button>
@@ -17,9 +17,11 @@ const ExtentScopeLegendary = () => {
                 extent_image="/images/content-01.png"
                 extent_icon="/images/featured-icon.svg"
                 extent_list={ [
-                    { text: "Blockchain üzerinde geliştirilmiş projeleri yakından tanıma" },
-                    { text: "Proje Süreçlerinin analizini dinleme" },
-                    { text: "Dignissim dolor ac ultrices eu congue facilisis sed gravida ultrices." }
+                    { text: "Bir dApp nasıl ortaya çıkar." },
+                    { text: "Web3 dünyasında yaratıcı ve üretken ekipler kurmak" },
+                    { text: "Dünyadaki trendler…" },
+                    { text: "Sonraki 1 Milyon kullanıcı: GameFi" },
+                    { text: "… ve çok daha fazlası" }
                 ] }
             />
             <ExtentCellEpic
@@ -27,9 +29,10 @@ const ExtentScopeLegendary = () => {
                 extent_image="/images/content-02.png"
                 extent_icon="/images/featured-icon-2.svg"
                 extent_list={ [
-                    { text: "Çeşitli dillerde giriş seviyesi" },
-                    { text: "Uygulamalı Teorik Eğitimler" },
-                    { text: "Dignissim dolor ac ultrices eu congue facilisis sed gravida ultrices." }
+                    { text: "Web3 dünyasında söz sahibi yazılım dillerine hızlı bakış" },
+                    { text: "White Paper nasıl yazılır?" },
+                    { text: "Blockchain’de kod yazmanın felsefesi" },
+                    { text: "…ve çok daha fazlası" }
                 ] }
             />
             <ExtentCellEpic
@@ -37,9 +40,9 @@ const ExtentScopeLegendary = () => {
                 extent_image="/images/content-03.png"
                 extent_icon="/images/featured-icon-3.svg"
                 extent_list={ [
-                    { text: "Katılımcı firmalardan teknik ekiplerle buluşma" },
-                    { text: "Orci dui nec diam eget eget nulla." },
-                    { text: "Dignissim dolor ac ultrices eu congue facilisis sed gravida ultrices." }
+                    { text: "İşini blockchain üzerinde inşa edenlerle tanış" },
+                    { text: "Web3 ekosisteminin her kesiminden öncü kişilerle iletişim kurma şansı" },
+                    { text: "Geleceği birlikte inşaa edeceğiniz iş birlikteliklerine imza atma şansı" }
                 ] }
             />
         </div>
