@@ -10,9 +10,9 @@ const OurSupportersScopeLegendary = () => {
             <ImageListEpic
                 head="Platin  Destekçilerimiz"
                 image_list={ [
-                    { url: '/images/brand/Binance-Logo.png' },
-                    { url: '/images/brand/ethereum-logo.png' },
-                    { url: '/images/brand/google-logo.png' }
+                    { url: '/images/icons/aa.png' },
+                    { url: '/images/icons/aa.png' },
+                    { url: '/images/icons/aa.png' }
                 ] }
             />
             <ImageListEpic

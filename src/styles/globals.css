@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
 html, body {
     scroll-behavior: smooth!important;
 }
@@ -137,6 +143,17 @@ body {
     top: 0;
     overflow: hidden;
     mix-blend-mode: color-dodge;
+    opacity: 1;
+    animation: op 5s;
+}
+
+@keyframes op {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .board {
@@ -318,6 +335,12 @@ body {
     top: 0;
     left: 0;
     right: 0;
+}
+
+.slider-img {
+    height: 60px;
+    width: 100%;
+    object-fit: contain;
 }
 
 .support-us-content {
