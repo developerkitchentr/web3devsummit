@@ -1,53 +1,35 @@
 import ImageListEpic from "../epic/image-list.epic";
+import {DataSponsors} from "../../api/models";
+import {getImageSrc} from "../../helper";
+import {useContext} from "react";
+import AppContext from "../../context/site-context";
+import ScopeHeadersEpic from "../epic/scope-headers.epic";
 
 const classNames = {
     root: 'our-supporters-scope-legendary'
 }
 
-const OurSupportersScopeLegendary = () => {
+interface Props {
+    sponsors: DataSponsors[]
+}
+
+const OurSupportersScopeLegendary = ({sponsors}: Props) => {
+    const value = useContext(AppContext);
     return (
-        <div id="supporters" className={ classNames.root }>
-            <ImageListEpic
-                head="Platin"
-                image_list={ [
-                    { url: '/images/icons/aa.png' },
-                    { url: '/images/icons/aa.png' },
-                    { url: '/images/icons/aa.png' }
-                ] }
+        <div id="supporters" className={classNames.root}>
+            <ScopeHeadersEpic
+                variant="mb-12"
+                head={value?.attributes.txt_destekcilerimiz}
             />
-            <ImageListEpic
-                head="Gold"
-                image_list={ [
-                    { url: '/images/icons/aa.png' },
-                    { url: '/images/icons/aa.png' },
-                    { url: '/images/icons/aa.png' },
-                    { url: '/images/icons/aa.png' }
-                ] }
-            />
-            <ImageListEpic
-                head="Medya"
-                image_list={ [
-                    { url: '/images/brand/crypto-female-logo.png' },
-                    { url: '/images/brand/btc-haber-logo.png' },
-                    { url: '/images/brand/coinotag-logo.png' },
-                    { url: '/images/brand/merkeziyetsiz-gelecek.svg' },
-                    { url: '/images/brand/bein-crypto.png' },
-                    { url: '/images/brand/nft-horizon.png' }
-                ] }
-            />
-            <ImageListEpic
-                head="İçerik Destekçimiz"
-                image_list={ [
-                    { url: '/images/brand/patika.png' }
-                ] }
-            />
-            <ImageListEpic
-                head="Organizatör"
-                image_list={ [
-                    { url: '/images/brand/devkit-logo.png' },
-                    { url: '/images/brand/devmultigroup-logo.png' }
-                ] }
-            />
+            {sponsors?.map(({id, attributes}) => (
+                <ImageListEpic
+                    key={id}
+                    head={attributes.title}
+                    image_list={attributes.sponsors?.map(s => ({
+                        url: getImageSrc(s.logo.data.attributes.url)
+                    }))}
+                />
+            ))}
         </div>
     );
 };

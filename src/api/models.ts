@@ -1,3 +1,5 @@
+
+/* ------ MAIN CONTENTS ------ */
 export interface TopLevel {
     id:         number;
     attributes: Attributes;
@@ -6,20 +8,93 @@ export interface TopLevel {
 export interface Attributes {
     title:       string;
     content:     string;
-    listOrder:   number;
-    isRight:     boolean;
+    list_order:   number;
+    is_right:     boolean;
     locale:      string;
-    icon: {
-        "data": {
-            "id": 11,
-            "attributes": {
-                "url": "/uploads/microphone_5c9becd681.png"
-            }
-        }
-    };
+    icon: ICON;
     image: IMAGE
 }
 
+/* -------- SPONSORS ------- */
+
+export interface DataSponsors {
+    id:         number;
+    attributes: DataSponsorsAttributes;
+}
+
+export interface DataSponsorsAttributes {
+    title:       string;
+    list_order:   number;
+    locale:      string;
+    sponsors:    Sponsor[];
+}
+
+export interface Sponsor {
+    id:        number;
+    name:      string;
+    list_order: number;
+    linkedin:  null;
+    twitter:   null;
+    logo:      ICON;
+}
+
+/* -------- TAB CONTENT -------- */
+export interface DataTabContent {
+    id:         number;
+    attributes: Attributes;
+}
+
+export interface Attributes {
+    title:         string;
+    list_order:     number;
+    left_content:   string;
+    right_content:  string;
+    locale:        string;
+}
+
+/* -------- SITE GENERAL ------- */
+export interface SiteGeneral {
+    id:         number;
+    attributes: Attributes;
+}
+
+export interface Attributes {
+    txt_kapsam:                        string;
+    txt_panelistler:                   string;
+    txt_destekcilerimiz:               string;
+    txt_bilet:                         string;
+    ben_txt_sponsor_ol:                string;
+    txt_header_event_whitepaper:       string;
+    txt_subheader_event_whitepaper:    string;
+    link_whitepaper:                   string;
+    createdAt:                         Date;
+    updatedAt:                         Date;
+    publishedAt:                       Date;
+    locale:                            string;
+    txt_header_panelistler:            string;
+    txt_subheader_panelistler:         string;
+    txt_yakinda:                       string;
+    txt_header_gonullu_ekibe_katil:    string;
+    txt_subheader_gonullu_ekibe_katil: string;
+    txt_btn_gonullu_basvur:            string;
+    txt_header_gonullu_neden:          string;
+    txt_gonullu_neden_icerik:          string;
+    txt_header_gonullu_gorevler:       string;
+    txt_gonullu_gorevler_icerik:       string;
+    txt_header_gonullu_surec:          string;
+    txt_gonullu_surec_icerik:          string;
+    txt_header_bizi_destekleyin:       string;
+    txt_bizi_destekleyin_icerik:       string;
+    txt_header_bilet:                  string;
+    txt_subheader_biler:               string;
+    link_bilet_al:                     string;
+    link_destekcimiz_ol:               string;
+    txt_btn_bizi_destekleyin:          string;
+    txt_subheader_kapsam:              string;
+}
+
+
+/* ----------------------------------------------------------------------------------  GENERAL*/
 
 export interface IMAGE {
     data: DataIMAGE;
@@ -48,4 +123,13 @@ export interface Attributes3 {
     height:   number;
     formats: Formats;
     url:      string;
+}
+
+interface ICON {
+    "data": {
+        "id": 11,
+        "attributes": {
+            "url": "/uploads/microphone_5c9becd681.png"
+        }
+    }
 }

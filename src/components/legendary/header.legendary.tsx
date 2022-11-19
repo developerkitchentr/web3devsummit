@@ -1,11 +1,13 @@
 import ListEpic from "../epic/list.epic";
-import { ROUTER_PATHS } from "../../constants/router-paths";
+import {ROUTER_PATHS} from "../../constants/router-paths";
 import ButtonCommon from "../common/button.common";
 import LogoIcon from "../common/icons/logo.icon";
-import {useState} from "react";
+import {useContext, useState} from "react";
+import AppContext from "../../context/site-context";
 
 const HeaderLegendary = () => {
     const [menuOpened, setMenuOpened] = useState<boolean>(false);
+    const value = useContext(AppContext);
 
     const menuOpener = (bool: boolean): void => {
         setMenuOpened(bool)
@@ -15,12 +17,14 @@ const HeaderLegendary = () => {
         <header className="header-legendary flex items-center">
             <div className="container mx-auto">
                 <div className="flex items-center justify-between">
-                    <LogoIcon />
-                    <ListEpic menuOpened={menuOpened} list={ROUTER_PATHS} variant="ml-auto header-nav" />
+                    <LogoIcon/>
+                    <ListEpic menuOpened={menuOpened} variant="ml-auto header-nav"/>
                     <div className="flex items-center">
-                        <ButtonCommon variant="primary ml-2">
-                            Sponsor Ol
-                        </ButtonCommon>
+                        {value &&
+                            <ButtonCommon variant="primary ml-2">
+                                {value?.attributes.ben_txt_sponsor_ol}
+                            </ButtonCommon>
+                        }
                         <div
                             onClick={() => menuOpener(!menuOpened)}
                             className={`menu-opener ml-3 ${menuOpened ? 'change' : ''}`}

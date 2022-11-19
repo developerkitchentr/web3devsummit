@@ -12,35 +12,72 @@ import TicketScopeLegendary from "../components/legendary/ticket-scope.legendary
 import OurSupportersScopeLegendary from "../components/legendary/our-supporters-scope.legendary";
 import FooterLegendary from "../components/legendary/footer.legendary";
 import {fetches} from "../api/fetches";
-import {TopLevel} from "../api/models";
+import {DataSponsors, DataTabContent, SiteGeneral, TopLevel} from "../api/models";
+import {Tabs} from "flowbite-react"
+import ReactMarkdown from "react-markdown";
+import AppContext from "../context/site-context";
 
 interface Props {
-    mainContents: TopLevel[]
+    mainContents: TopLevel[],
+    sponsors: DataSponsors[],
+    tabContents: DataTabContent[],
+    siteGeneral: SiteGeneral
+
 }
 
 const Home: NextPage<Props> = (
     {
-        mainContents
+        mainContents,
+        sponsors,
+        tabContents,
+        siteGeneral
     }
 ) => {
     return (
-        <>
+        <AppContext.Provider
+            value={siteGeneral}
+        >
             <HeaderLegendary/>
             <MainBannerEpic/>
             <MainLegendary>
                 <>
                     <MainSliderLegendary/>
                     <WhitePaperEpic/>
+                    <div className="tab-group-outer">
+                        <Tabs.Group className="app-tabs">
+                            {tabContents?.sort((a, b) => a.attributes.list_order - b.attributes.list_order)
+                                .map(({id, attributes}) => (
+                                    <Tabs.Item
+                                        key={id}
+                                        active={true}
+                                        title={attributes.title}
+                                    >
+                                        <div className="extent-cell-epic sm:flex sm:flex-row items-center mb-5">
+                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff">
+                                                <ReactMarkdown>
+                                                    {attributes.left_content}
+                                                </ReactMarkdown>
+                                            </div>
+                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff">
+                                                <ReactMarkdown>
+                                                    {attributes.right_content}
+                                                </ReactMarkdown>
+                                            </div>
+                                        </div>
+                                    </Tabs.Item>
+                                ))}
+                        </Tabs.Group>
+                    </div>
                     <ExtentScopeLegendary mainContents={mainContents}/>
                     <PanelistScopeLegendary/>
                     <JoinTeamScopeLegendary/>
                     <SupportUsScopeLegendary/>
                     <TicketScopeLegendary/>
-                    <OurSupportersScopeLegendary/>
+                    <OurSupportersScopeLegendary sponsors={sponsors}/>
                 </>
             </MainLegendary>
             <FooterLegendary/>
-        </>
+        </AppContext.Provider>
     )
 }
 
@@ -48,10 +85,16 @@ const Home: NextPage<Props> = (
 export const getServerSideProps: GetServerSideProps = async (context) => {
     // ...
     const mainContents = await fetches.getMainContents()
+    const sponsors = await fetches.getSponsors()
+    const tabContents = await fetches.getTabContents()
+    const siteGeneral = await fetches.getSiteGeneral()
 
     return {
         props: {
-            mainContents
+            mainContents,
+            sponsors,
+            tabContents,
+            siteGeneral
         }
     }
 }

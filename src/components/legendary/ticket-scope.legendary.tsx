@@ -1,18 +1,21 @@
 import ScopeHeadersEpic from "../epic/scope-headers.epic";
 import Image from "next/image";
+import {useContext} from "react";
+import AppContext from "../../context/site-context";
 
 const classNames = {
     root: 'ticket-scope-legendary grid grid-cols-1 sm:grid-cols-2 gap-6'
 }
 
 const TicketScopeLegendary = () => {
+    const value = useContext(AppContext);
     return (
         <div id="ticket" className={ classNames.root }>
             <ScopeHeadersEpic
-                head="Web3 Developer Summit ‘22 Biletleri"
-                sub="Sınırlı kontenjanla yapılacak etkinlik için biletlerinizi şimdiden oluşturabilirsiniz."
+                head={value?.attributes.txt_header_bilet}
+                sub={value?.attributes.txt_subheader_biler}
                 variant="secondary"
-                button_text="Biletini Ayırt"
+                button_text={value?.attributes.link_bilet_al}
             />
             <Image className="w-100 d-block" src="/images/summit.png" alt="" width={650} height={300} />
         </div>

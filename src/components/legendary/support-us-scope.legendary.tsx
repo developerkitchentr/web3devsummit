@@ -1,5 +1,7 @@
 import ButtonCommon from "../common/button.common";
 import Image from "next/image";
+import {useContext} from "react";
+import AppContext from "../../context/site-context";
 
 const classNames = {
     root: 'support-us-scope-legendary flex items-center justify-between',
@@ -10,21 +12,25 @@ const classNames = {
 }
 
 const SupportUsScopeLegendary = () => {
+    const value = useContext(AppContext);
+
     return (
-        <div id="volunteer" className={ classNames.root }>
+        <div id="volunteer" className={classNames.root}>
             <Image
-                className={ classNames.image }
+                className={classNames.image}
                 src="/images/cta-section-border.svg"
                 alt=""
-                width={ 1095 }
-                height={ 240 }/>
-            <div className={ classNames.content }>
-                <h2 className={ classNames.head }>Bizi Destekleyin</h2>
-                <p className={ classNames.desc }>
-                    Geleceği inşa etme vizyonuna sahip ekipleri bir araya getiren organizasyonumuzu destekleyerek
-                    adınızı blockchain ekosistemindeki bu nitelikli ve niş kitleye duyurup, teknoloji severlere
-                    ulaşabilirsiniz.
-                </p>
+                width={1095}
+                height={240}/>
+            <div className={classNames.content}>
+                {value &&
+                    <>
+                        <h2 className={classNames.head}>{value?.attributes.txt_header_bizi_destekleyin}</h2>
+                        <p className={classNames.desc}>
+                            {value?.attributes.txt_bizi_destekleyin_icerik}
+                        </p>
+                    </>
+                }
             </div>
             <ButtonCommon variant="tertiary min-w">
                 Formu doldur

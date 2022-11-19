@@ -1,21 +1,33 @@
 import ListItemCommon from "../common/list-item.common";
-import { memo } from "react";
-import { RouterPaths_ } from "../../constants/router-paths";
+import {memo, useContext} from "react";
+import {RouterPaths_} from "../../constants/router-paths";
+import AppContext from "../../context/site-context";
 
 interface Props {
-    list: RouterPaths_[],
     variant?: string,
     menuOpened?: boolean
 }
 
-const ListEpic = ({ list, variant = '', menuOpened }: Props) => {
+const ListEpic = ({variant = '', menuOpened}: Props) => {
+    const value = useContext(AppContext);
     return (
-        <ul className={ `list-epic ${ variant } ${menuOpened ? 'opened' : ''}` }>
-            { list.map((route, index) => (
-                <ListItemCommon key={ `${ route.name }-${ index }` } href={ route.href }>
-                    { route.name }
-                </ListItemCommon>
-            )) }
+        <ul className={`list-epic ${variant} ${menuOpened ? 'opened' : ''}`}>
+            {value &&
+                <>
+                    <ListItemCommon href="#extent">
+                        {value?.attributes.txt_kapsam}
+                    </ListItemCommon>
+                    <ListItemCommon href="#panelist">
+                        {value?.attributes.txt_panelistler}
+                    </ListItemCommon>
+                    <ListItemCommon href="#supporters">
+                        {value?.attributes.txt_destekcilerimiz}
+                    </ListItemCommon>
+                    <ListItemCommon href="#ticket">
+                        {value?.attributes.txt_bilet}
+                    </ListItemCommon>
+                </>
+            }
         </ul>
     )
 }

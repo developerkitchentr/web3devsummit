@@ -12,8 +12,8 @@ const CardEpic = ({ variant, content, image }: Props) => {
             <Image
                 className={ classNames.cardImage }
                 src={ image }
-                alt={ content.name }
                 width={ 1000 }
+                alt=""
                 height={ 1135 }
             />
             <CardsContentCommon
