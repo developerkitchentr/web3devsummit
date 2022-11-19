@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type {GetServerSideProps, NextPage} from 'next';
 import HeaderLegendary from "../components/legendary/header.legendary";
 import MainLegendary from "../components/legendary/main.legendary";
 import MainBannerEpic from "../components/epic/main-banner.epic";
@@ -11,27 +11,49 @@ import SupportUsScopeLegendary from "../components/legendary/support-us-scope.le
 import TicketScopeLegendary from "../components/legendary/ticket-scope.legendary";
 import OurSupportersScopeLegendary from "../components/legendary/our-supporters-scope.legendary";
 import FooterLegendary from "../components/legendary/footer.legendary";
+import {fetches} from "../api/fetches";
+import {TopLevel} from "../api/models";
 
-const Home: NextPage = () => {
+interface Props {
+    mainContents: TopLevel[]
+}
+
+const Home: NextPage<Props> = (
+    {
+        mainContents
+    }
+) => {
     return (
         <>
             <HeaderLegendary/>
-            <MainBannerEpic />
+            <MainBannerEpic/>
             <MainLegendary>
                 <>
-                    <MainSliderLegendary />
-                    <WhitePaperEpic />
-                    <ExtentScopeLegendary />
-                    <PanelistScopeLegendary />
-                    <JoinTeamScopeLegendary />
-                    <SupportUsScopeLegendary />
-                    <TicketScopeLegendary />
-                    <OurSupportersScopeLegendary />
+                    <MainSliderLegendary/>
+                    <WhitePaperEpic/>
+                    <ExtentScopeLegendary mainContents={mainContents}/>
+                    <PanelistScopeLegendary/>
+                    <JoinTeamScopeLegendary/>
+                    <SupportUsScopeLegendary/>
+                    <TicketScopeLegendary/>
+                    <OurSupportersScopeLegendary/>
                 </>
             </MainLegendary>
-            <FooterLegendary />
+            <FooterLegendary/>
         </>
     )
+}
+
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    // ...
+    const mainContents = await fetches.getMainContents()
+
+    return {
+        props: {
+            mainContents
+        }
+    }
 }
 
 export default Home

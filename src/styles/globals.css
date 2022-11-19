@@ -221,6 +221,33 @@ body {
     margin-left: auto;
 }
 
+.extent-list-epic {
+    position: relative;
+}
+
+.extent-list-epic li {
+    margin-bottom: 10px;
+    padding-left: 36px;
+    padding-top: 5px;
+}
+
+.extent-list-epic li:before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    background-image: url('/images/check-with-colorize.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    left: 0;
+
+}
+
+.extent-list-epic * {
+    color: #fff;
+}
+
 .extent-cell-epic:nth-child(even) .extent-list-epic {
     order: 1
 }
