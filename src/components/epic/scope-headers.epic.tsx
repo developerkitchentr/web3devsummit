@@ -1,4 +1,6 @@
 import ButtonCommon from "../common/button.common";
+import TwitterIcon from "../common/icons/twitter.icon";
+import Link from "next/link";
 
 const classNames = {
     scopeRoot: (variant: string = "") => `scope-headers ${variant}`,
@@ -6,7 +8,7 @@ const classNames = {
     sub: (button_text?: string) => `color-white text-xl ${button_text ? "mb-5" : ''}`
 }
 
-const ScopeHeadersEpic = ({head, sub, variant, button_text}: Props) => {
+const ScopeHeadersEpic = ({head, sub, variant, button_text, button_link}: Props) => {
     return (
         <div className={classNames.scopeRoot(variant)}>
             <h2 className={classNames.head}>
@@ -17,10 +19,12 @@ const ScopeHeadersEpic = ({head, sub, variant, button_text}: Props) => {
                     {sub}
                 </p>
             }
-            {button_text &&
-                <ButtonCommon variant="primary">
-                    {button_text}
-                </ButtonCommon>
+            {(button_text && button_link) &&
+                <Link target="_blank" href={button_link} className="mr-3">
+                    <ButtonCommon variant="primary">
+                        {button_text}
+                    </ButtonCommon>
+                </Link>
             }
         </div>
     )
@@ -31,6 +35,7 @@ interface Props {
     sub?: string;
     variant?: string;
     button_text?: string;
+    button_link?: string
 }
 
 export default ScopeHeadersEpic
