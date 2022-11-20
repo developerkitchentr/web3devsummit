@@ -4,14 +4,14 @@ import {useContext} from "react";
 import AppContext from "../../context/site-context";
 
 const classNames = {
-    root: 'grid grid-cols-1 md:grid-cols-2 gap-6 join-team-scope-legendary'
+    root: 'grid grid-cols-1 md:grid-cols-2 gap-6 join-team-scope-legendary pt-3'
 }
 
 
 const JoinTeamScopeLegendary = () => {
     const value = useContext(AppContext);
     return (
-        <div className={ classNames.root }>
+        <div id="volunteer" className={ classNames.root }>
             <ScopeHeadersEpic
                 head={value?.attributes.txt_header_gonullu_ekibe_katil}
                 sub={value?.attributes.txt_subheader_gonullu_ekibe_katil}

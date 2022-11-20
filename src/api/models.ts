@@ -91,6 +91,25 @@ export interface Attributes {
     link_destekcimiz_ol:               string;
     txt_btn_bizi_destekleyin:          string;
     txt_subheader_kapsam:              string;
+    txt_btn_formu_doldur: string;
+    txt_gonullu_ol: string;
+}
+
+/* ----------------------------------------------------------------------------------  PanelistData */
+
+export interface PanelistData {
+    id:         number;
+    attributes: Attributes;
+}
+
+export interface Attributes {
+    name_surname: string;
+    linkedin:     string;
+    twitter:      string;
+    job_title:    string;
+    list_order:   number;
+    is_tmp:       boolean;
+    photo: IMAGE
 }
 
 

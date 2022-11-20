@@ -1,5 +1,4 @@
 import ButtonCommon from "../common/button.common";
-import TwitterIcon from "../common/icons/twitter.icon";
 import Link from "next/link";
 
 const classNames = {

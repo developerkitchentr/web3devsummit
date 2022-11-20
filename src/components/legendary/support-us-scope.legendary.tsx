@@ -32,9 +32,11 @@ const SupportUsScopeLegendary = () => {
                     </>
                 }
             </div>
-            <ButtonCommon variant="tertiary min-w">
-                Formu doldur
-            </ButtonCommon>
+            {value &&
+                <ButtonCommon variant="tertiary min-w">
+                    {value?.attributes.txt_btn_formu_doldur}
+                </ButtonCommon>
+            }
         </div>
     );
 };

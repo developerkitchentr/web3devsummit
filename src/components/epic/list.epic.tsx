@@ -26,6 +26,9 @@ const ListEpic = ({variant = '', menuOpened}: Props) => {
                     <ListItemCommon href="#ticket">
                         {value?.attributes.txt_bilet}
                     </ListItemCommon>
+                    <ListItemCommon href="#volunteer">
+                        {value?.attributes.txt_gonullu_ol}
+                    </ListItemCommon>
                 </>
             }
         </ul>

@@ -1,5 +1,5 @@
 import {API_PATHS, createAxios} from "./constants";
-import {DataSponsors, DataTabContent, SiteGeneral, TopLevel} from "./models";
+import {DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel} from "./models";
 
 const getData = async (url: string) => {
     const res = await createAxios().get(url)
@@ -24,5 +24,9 @@ export const fetches = {
     async getSiteGeneral() {
         const url = API_PATHS.siteGeneral
         return await getData(url) as SiteGeneral
+    },
+    async getPanelistsData() {
+        const url = API_PATHS.panelists
+        return await getData(url) as PanelistData[]
     }
 }
