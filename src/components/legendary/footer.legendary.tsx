@@ -13,7 +13,7 @@ const FooterLegendary = () => {
         <div className={ classNames.root }>
             <div className={ classNames.container }>
                 <LogoIcon/>
-                <ListEpic list={ ROUTER_PATHS } variant="mx-auto footer-list-epic"/>
+                <ListEpic variant="mx-auto footer-list-epic"/>
                 <h2 className={ classNames.info }>© 2022 web3devsummit</h2>
             </div>
         </div>
