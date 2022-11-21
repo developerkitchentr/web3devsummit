@@ -51,16 +51,19 @@ const Home: NextPage<Props> = (
             <HeaderLegendary locale={locale}/>
             <MainBannerEpic/>
             
-             <ScopeHeadersEpic
-                variant="mb-12"
-                head={siteGeneral?.attributes.txt_kapsam}
-                sub="Blockchain ekosisteminde yer alan yaratıcı ve geliştiricilerle iş modelini blockchain temelli teknolojiler ile güçlendirmek isteyen iş geliştirme uzmanları için yepyeni bir deneyim sunuyoruz."
-            />
+            
             
             <MainLegendary>
                 <>
                     <MainSliderLegendary/>
                     <WhitePaperEpic/>
+                    
+                     <ScopeHeadersEpic
+                variant="mb-12"
+                head={siteGeneral?.attributes.txt_kapsam}
+                sub="Blockchain ekosisteminde yer alan yaratıcı ve geliştiricilerle iş modelini blockchain temelli teknolojiler ile güçlendirmek isteyen iş geliştirme uzmanları için yepyeni bir deneyim sunuyoruz."
+            />
+                    
                      <div className="tab-group-outer">
                         <Tabs.Group className="app-tabs">
                             {tabContents?.sort((a, b) => a.attributes.list_order - b.attributes.list_order)
