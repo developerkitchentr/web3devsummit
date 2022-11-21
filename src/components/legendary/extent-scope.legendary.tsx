@@ -10,6 +10,7 @@ interface Props {
 }
 
 const ExtentScopeLegendary = ({mainContents}: Props) => {
+    console.log(mainContents)
     const value = useContext(AppContext);
     return (
         <div id="extent" className="extent-scope-legendary">
@@ -18,9 +19,9 @@ const ExtentScopeLegendary = ({mainContents}: Props) => {
                 head={value?.attributes.txt_kapsam}
                 sub="Blockchain ekosisteminde yer alan yaratıcı ve geliştiricilerle iş modelini blockchain temelli teknolojiler ile güçlendirmek isteyen iş geliştirme uzmanları için yepyeni bir deneyim sunuyoruz."
             />
-            <div className="mb-12">
+           {/* <div className="mb-12">
                 <button className="button-common primary mx-auto">Daha fazla bilgi edin</button>
-            </div>
+            </div>*/}
             {mainContents?.map(({id, attributes}) => (
                 <ExtentCellEpic
                     key={id}

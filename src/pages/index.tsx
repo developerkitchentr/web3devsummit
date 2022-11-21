@@ -53,6 +53,7 @@ const Home: NextPage<Props> = (
                 <>
                     <MainSliderLegendary/>
                     <WhitePaperEpic/>
+                    <ExtentScopeLegendary mainContents={mainContents}/>
                     <div className="tab-group-outer">
                         <Tabs.Group className="app-tabs">
                             {tabContents?.sort((a, b) => a.attributes.list_order - b.attributes.list_order)
@@ -63,12 +64,12 @@ const Home: NextPage<Props> = (
                                         title={attributes.title}
                                     >
                                         <div className="extent-cell-epic sm:flex sm:flex-row items-center mb-5">
-                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff">
+                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5">
                                                 <ReactMarkdown>
                                                     {attributes.left_content}
                                                 </ReactMarkdown>
                                             </div>
-                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff">
+                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5">
                                                 <ReactMarkdown>
                                                     {attributes.right_content}
                                                 </ReactMarkdown>
@@ -78,10 +79,9 @@ const Home: NextPage<Props> = (
                                 ))}
                         </Tabs.Group>
                     </div>
-                    <ExtentScopeLegendary mainContents={mainContents}/>
                     <PanelistScopeLegendary panelists={panelists}/>
                     <JoinTeamScopeLegendary/>
-                    <SupportUsScopeLegendary/>
+                    {/*<SupportUsScopeLegendary/>*/}
                     <TicketScopeLegendary/>
                     <OurSupportersScopeLegendary sponsors={sponsors}/>
                     <ScopeHeadersEpic
