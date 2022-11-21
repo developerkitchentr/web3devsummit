@@ -18,7 +18,7 @@ import {Tabs} from "flowbite-react"
 import ReactMarkdown from "react-markdown";
 import AppContext from "../context/site-context";
 import Script from 'next/script'
-import ScopeHeadersEpic from "../components/epic/scope-headers.epic";
+
 import {useContext} from "react";
 import Image from "next/image";
 
