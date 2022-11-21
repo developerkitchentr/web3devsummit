@@ -30,7 +30,7 @@ const HeaderLegendary = ({locale}: Props) => {
                     <LogoIcon/>
                     <ListEpic menuOpened={menuOpened} variant="ml-auto header-nav"/>
                     <div className="flex items-center lang-button-outer">
-                        {value &&
+                        {/*{value &&
                             <Dropdown
                                 label={locale}
                                 dismissOnClick={false}
@@ -42,7 +42,7 @@ const HeaderLegendary = ({locale}: Props) => {
                                     en
                                 </Dropdown.Item>
                             </Dropdown>
-                        }
+                        }*/}
                         <div
                             onClick={() => menuOpener(!menuOpened)}
                             className={`menu-opener ml-3 ${menuOpened ? 'change' : ''}`}

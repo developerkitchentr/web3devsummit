@@ -11,15 +11,15 @@ interface Props {
 
 const ExtentCellEpic = ({ extent_list, extent_head, extent_image, extent_icon }: Props) => {
     return (
-        <div className="extent-cell-epic sm:flex sm:flex-row items-center mb-5">
+        <div className="extent-cell-epic sm:flex sm:flex-row items-center mb-10">
             <ExtentListEpic
-                variant="basis-1/1 sm:basis-1/2"
+                variant="basis-1/1 sm:basis-1/2 mb-5"
                 head={ extent_head }
                 list={ extent_list }
                 icon={ extent_icon }
             />
             <ExtentCellImageCommon
-                variant="basis-1/1 sm:basis-1/2"
+                variant="basis-1/1 sm:basis-1/2 mb-5"
                 src={ extent_image }
             />
         </div>

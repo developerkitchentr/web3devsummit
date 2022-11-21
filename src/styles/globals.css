@@ -476,7 +476,20 @@ body {
     color: #fff;
 }
 
+.cards-content-common li {
+    padding-left: 19px;
+}
+
+.get-codes-cell span {
+    width: calc(100% - 30px);
+    overflow: hidden;
+}
+
 @media (max-width: 1023.98px) {
+    .cards-content-common li {
+        padding-left: 0;
+    }
+
     .menu-opener {
         display: inline-block;
         cursor: pointer;
@@ -532,6 +545,13 @@ body {
     .footer-list-epic {
         display: none;
     }
+
+    .app-tabs [role="tablist"] {
+        border-radius: 20px;
+        flex-wrap: wrap;
+    }
+
+
 }
 
 @media (max-width: 639.98px) {
@@ -572,4 +592,16 @@ body {
     .extent-cell-image-common {
         width: 100%;
     }
+
+    .bottom-image {
+        height: 80px;
+        min-height: 50px;
+        bottom: -50px;
+        overflow: hidden;
+    }
+    .bottom-image img {
+        position: absolute;
+        bottom: 0;
+    }
+
 }
