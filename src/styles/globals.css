@@ -234,6 +234,9 @@ body {
     position: relative;
 }
 
+.tab-group-outer div {
+  position: relatie;
+}
 .extent-list-epic li, .tab-group-outer li {
     margin-bottom: 10px;
     padding-left: 36px;
@@ -251,6 +254,10 @@ body {
     position: absolute;
     left: 0;
 
+}
+
+.tab-group-outer div li:before {
+    left:10px
 }
 
 .extent-list-epic * {
