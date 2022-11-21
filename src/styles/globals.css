@@ -234,8 +234,8 @@ body {
     position: relative;
 }
 
-.tab-group-outer div {
-  position: relatie;
+.tab-group-outer ul {
+  position: relatie !important;
 }
 .extent-list-epic li, .tab-group-outer li {
     margin-bottom: 10px;
