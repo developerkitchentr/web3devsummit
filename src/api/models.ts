@@ -93,6 +93,10 @@ export interface Attributes {
     txt_subheader_kapsam:              string;
     txt_btn_formu_doldur: string;
     txt_gonullu_ol: string;
+    bitcoin_wallet_address: string,
+    ethereum_wallet_address: string,
+    solana_wallet_address: string,
+    avalache_wallet_address: string
 }
 
 /* ----------------------------------------------------------------------------------  PanelistData */

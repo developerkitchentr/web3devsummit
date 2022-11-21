@@ -16,6 +16,10 @@ import {DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel} from 
 import {Tabs} from "flowbite-react"
 import ReactMarkdown from "react-markdown";
 import AppContext from "../context/site-context";
+import Script from 'next/script'
+import ScopeHeadersEpic from "../components/epic/scope-headers.epic";
+import {useContext} from "react";
+import Image from "next/image";
 
 interface Props {
     mainContents: TopLevel[],
@@ -34,6 +38,11 @@ const Home: NextPage<Props> = (
         panelists
     }
 ) => {
+
+    const copy = (value: string) => {
+        navigator.clipboard.writeText(value);
+    }
+
     return (
         <AppContext.Provider value={siteGeneral}>
             <HeaderLegendary/>
@@ -71,9 +80,49 @@ const Home: NextPage<Props> = (
                     <PanelistScopeLegendary panelists={panelists}/>
                     <JoinTeamScopeLegendary/>
                     <SupportUsScopeLegendary/>
-                    <TicketScopeLegendary/>
+                    {/*<TicketScopeLegendary/>*/}
                     <OurSupportersScopeLegendary sponsors={sponsors}/>
+                    <ScopeHeadersEpic
+                        variant="mb-12"
+                        head={siteGeneral?.attributes.txt_destekcilerimiz}
+                    />
+                    <div className="get-code-outer">
+                        <div className="sm:flex sm:flex-row items-center">
+                            <div className="basis-1/1 sm:basis-1/2 px-3 mb-5">
+                                <Image src="/images/bitcoin-bottom.svg" alt="" width={96} height={38}/>
+                                <div className="get-codes-cell" onClick={() => copy(siteGeneral?.attributes.bitcoin_wallet_address)}>
+                                    <span>{siteGeneral?.attributes.bitcoin_wallet_address}</span>
+                                    <Image src="/images/copy.svg" alt="" width={24} height={24} />
+                                </div>
+                            </div>
+                            <div className="basis-1/1 sm:basis-1/2 px-3 mb-5">
+                                <Image src="/images/ethereum-bottom.svg" alt="" width={118} height={38}/>
+                                <div className="get-codes-cell" onClick={() => copy(siteGeneral?.attributes.ethereum_wallet_address)}>
+                                    <span>{siteGeneral?.attributes.ethereum_wallet_address}</span>
+                                    <Image src="/images/copy.svg" alt="" width={24} height={24} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="sm:flex sm:flex-row items-center">
+                            <div className="basis-1/1 sm:basis-1/2 px-3 mb-5">
+                                <Image src="/images/solana-bottom.svg" alt="" width={93} height={38}/>
+                                <div className="get-codes-cell" onClick={() => copy(siteGeneral?.attributes.solana_wallet_address)}>
+                                    <span>{siteGeneral?.attributes.solana_wallet_address}</span>
+                                    <Image src="/images/copy.svg" alt="" width={24} height={24} />
+                                </div>
+                            </div>
+                            <div className="basis-1/1 sm:basis-1/2 px-3 mb-5">
+                                <Image src="/images/avax-bottom.svg" alt="" width={76} height={38}/>
+                                <div className="get-codes-cell" onClick={() => copy(siteGeneral?.attributes.avalache_wallet_address)}>
+                                    <span>{siteGeneral?.attributes.avalache_wallet_address}</span>
+                                    <Image src="/images/copy.svg" alt="" width={24} height={24} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </>
+
+
             </MainLegendary>
             <FooterLegendary/>
         </AppContext.Provider>

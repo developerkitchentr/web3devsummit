@@ -360,6 +360,27 @@ body {
     position: relative;
 }
 
+.get-codes-cell {
+    padding: 8px 14px;
+    border: 1px solid #60D0DF;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    cursor: pointer;
+}
+
+.get-code-outer {
+    background: radial-gradient(70.65% 70.65% at 50% 50%, #232D5E 0%, #212957 8%, #1B1E3F 42%, #171830 73%, #16162C 100%);
+    border-radius: 18px;
+    -webkit-box-shadow: 0px 0px 39px 0px rgba(144,236,255,1);
+    -moz-box-shadow: 0px 0px 39px 0px rgba(144,236,255,1);
+    box-shadow: 0px 0px 39px 0px rgba(144,236,255,1);
+    padding: 50px;
+    margin-bottom: 200px;
+}
+
 .support-us-image {
     position: absolute;
     top: 0;

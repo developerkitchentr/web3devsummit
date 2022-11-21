@@ -19,7 +19,7 @@ const WhitePaperEpic = () => {
                         <>
                             <Link href={value?.attributes.link_whitepaper} passHref legacyBehavior>
                                 <a target="_blank">
-                                    <ButtonCommon variant="secondary mr-2">
+                                    <ButtonCommon id="eventbrite-widget-modal-trigger-472071377197" variant="secondary mr-2">
                                         Event Whitepaper
                                     </ButtonCommon>
                                 </a>
