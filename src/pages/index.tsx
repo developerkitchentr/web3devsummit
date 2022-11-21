@@ -103,7 +103,7 @@ const Home: NextPage<Props> = (
                     
                    <ScopeHeadersEpic
                         variant="mb-12"
-                        head={siteGeneral?.attributes.txt_destekcilerimiz}
+                        head={siteGeneral?.attributes.txt_bize_destek_olun}
                     />
                     
                     <div className="get-code-outer">
