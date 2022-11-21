@@ -256,6 +256,11 @@ body {
 
 }
 
+.tab-group-outer p {
+
+    padding-bottom:10px
+
+}
 .tab-group-outer div li:before {
     left:2px
 }
