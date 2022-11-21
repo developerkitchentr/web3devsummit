@@ -11,6 +11,7 @@ import SupportUsScopeLegendary from "../components/legendary/support-us-scope.le
 import TicketScopeLegendary from "../components/legendary/ticket-scope.legendary";
 import OurSupportersScopeLegendary from "../components/legendary/our-supporters-scope.legendary";
 import FooterLegendary from "../components/legendary/footer.legendary";
+import ScopeHeadersEpic from "../components/epic/scope-headers.epic";
 import {fetches} from "../api/fetches";
 import {DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel} from "../api/models";
 import {Tabs} from "flowbite-react"
@@ -49,6 +50,13 @@ const Home: NextPage<Props> = (
         <AppContext.Provider value={siteGeneral}>
             <HeaderLegendary locale={locale}/>
             <MainBannerEpic/>
+            
+             <ScopeHeadersEpic
+                variant="mb-12"
+                head={value?.attributes.txt_kapsam}
+                sub="Blockchain ekosisteminde yer alan yaratıcı ve geliştiricilerle iş modelini blockchain temelli teknolojiler ile güçlendirmek isteyen iş geliştirme uzmanları için yepyeni bir deneyim sunuyoruz."
+            />
+            
             <MainLegendary>
                 <>
                     <MainSliderLegendary/>
