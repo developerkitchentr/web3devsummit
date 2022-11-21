@@ -101,8 +101,10 @@ const Home: NextPage<Props> = (
                     />
                     <OurSupportersScopeLegendary sponsors={sponsors}/>
                     
+                    <div class="scope-headers mb-12"><h2 class="text-4xl color-white mb-2">Bize Destek Olun</h2></div>
+                    
                     <div className="get-code-outer">
-                        <h2>Bize Destek Olun</h2>
+                         
                         <div className="sm:flex sm:flex-row items-center">
                             <div className="basis-1/1 sm:basis-1/2 px-3 mb-5">
                                 <Image src="/images/bitcoin-bottom.svg" alt="" width={96} height={38}/>
