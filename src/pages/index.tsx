@@ -101,7 +101,10 @@ const Home: NextPage<Props> = (
                     />
                     <OurSupportersScopeLegendary sponsors={sponsors}/>
                     
-                    <div class="scope-headers mb-12"><h2 class="text-4xl color-white mb-2">Bize Destek Olun</h2></div>
+                   <ScopeHeadersEpic
+                        variant="mb-12"
+                        head={siteGeneral?.attributes.txt_destekcilerimiz}
+                    />
                     
                     <div className="get-code-outer">
                          
