@@ -51,6 +51,7 @@ const Home: NextPage<Props> = (
             <HeaderLegendary locale={locale}/>
             <MainBannerEpic/>
 
+            <>
             
             <MainLegendary>
                 
