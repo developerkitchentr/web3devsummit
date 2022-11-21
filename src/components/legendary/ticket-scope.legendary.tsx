@@ -17,6 +17,7 @@ const TicketScopeLegendary = () => {
                 variant="secondary"
                 button_text={value?.attributes.link_bilet_al}
                 button_link={value?.attributes.link_destekcimiz_ol}
+                button_id={"eventbrite-widget-modal-trigger-472071377197"}
             />
             <Image className="w-100 d-block" src="/images/summit.png" alt="" width={650} height={300} />
         </div>

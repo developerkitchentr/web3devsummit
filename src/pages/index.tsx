@@ -26,7 +26,8 @@ interface Props {
     sponsors: DataSponsors[],
     tabContents: DataTabContent[],
     siteGeneral: SiteGeneral,
-    panelists: PanelistData[]
+    panelists: PanelistData[],
+    locale: string
 }
 
 const Home: NextPage<Props> = (
@@ -35,7 +36,8 @@ const Home: NextPage<Props> = (
         sponsors,
         tabContents,
         siteGeneral,
-        panelists
+        panelists,
+        locale
     }
 ) => {
 
@@ -45,7 +47,7 @@ const Home: NextPage<Props> = (
 
     return (
         <AppContext.Provider value={siteGeneral}>
-            <HeaderLegendary/>
+            <HeaderLegendary locale={locale}/>
             <MainBannerEpic/>
             <MainLegendary>
                 <>
@@ -80,7 +82,7 @@ const Home: NextPage<Props> = (
                     <PanelistScopeLegendary panelists={panelists}/>
                     <JoinTeamScopeLegendary/>
                     <SupportUsScopeLegendary/>
-                    {/*<TicketScopeLegendary/>*/}
+                    <TicketScopeLegendary/>
                     <OurSupportersScopeLegendary sponsors={sponsors}/>
                     <ScopeHeadersEpic
                         variant="mb-12"
@@ -131,12 +133,12 @@ const Home: NextPage<Props> = (
 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    // ...
-    const mainContents = await fetches.getMainContents()
-    const sponsors = await fetches.getSponsors()
-    const tabContents = await fetches.getTabContents()
-    const siteGeneral = await fetches.getSiteGeneral()
-    const panelists = await fetches.getPanelistsData()
+    const locale = "tr-TR" // context.locale ? (context.locale === "tr" ? "tr-TR" : "en") : "tr-TR";
+    const mainContents = await fetches.getMainContents(locale)
+    const sponsors = await fetches.getSponsors(locale)
+    const tabContents = await fetches.getTabContents(locale)
+    const siteGeneral = await fetches.getSiteGeneral(locale)
+    const panelists = await fetches.getPanelistsData(locale)
 
     return {
         props: {
@@ -144,7 +146,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             sponsors,
             tabContents,
             siteGeneral,
-            panelists
+            panelists,
+            locale
         }
     }
 }

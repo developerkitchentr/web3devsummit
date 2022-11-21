@@ -9,24 +9,24 @@ const getData = async (url: string) => {
 }
 
 export const fetches = {
-    async getMainContents() {
-        const url = API_PATHS.mainContent
+    async getMainContents(locale: string) {
+        const url = API_PATHS.mainContent(locale)
         return await getData(url) as TopLevel[]
     },
-    async getSponsors() {
-        const url = API_PATHS.sponsors
+    async getSponsors(locale: string) {
+        const url = API_PATHS.sponsors(locale)
         return await getData(url) as DataSponsors[]
     },
-    async getTabContents() {
-        const url = API_PATHS.tabContent
+    async getTabContents(locale: string) {
+        const url = API_PATHS.tabContent(locale)
         return await getData(url) as DataTabContent[]
     },
-    async getSiteGeneral() {
-        const url = API_PATHS.siteGeneral
+    async getSiteGeneral(locale: string) {
+        const url = API_PATHS.siteGeneral(locale)
         return await getData(url) as SiteGeneral
     },
-    async getPanelistsData() {
-        const url = API_PATHS.panelists
+    async getPanelistsData(locale: string) {
+        const url = API_PATHS.panelists(locale)
         return await getData(url) as PanelistData[]
     }
 }

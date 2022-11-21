@@ -17,6 +17,7 @@ const JoinTeamScopeLegendary = () => {
                 sub={value?.attributes.txt_subheader_gonullu_ekibe_katil}
                 variant="secondary"
                 button_text={value?.attributes.txt_btn_gonullu_basvur}
+                button_link={value?.attributes.link_gonullumuz_olun}
             />
             <CardEpic
                 variant="primary"

@@ -7,7 +7,7 @@ const classNames = {
     sub: (button_text?: string) => `color-white text-xl ${button_text ? "mb-5" : ''}`
 }
 
-const ScopeHeadersEpic = ({head, sub, variant, button_text, button_link}: Props) => {
+const ScopeHeadersEpic = ({head, sub, variant, button_text, button_link, button_id}: Props) => {
     return (
         <div className={classNames.scopeRoot(variant)}>
             <h2 className={classNames.head}>
@@ -18,7 +18,11 @@ const ScopeHeadersEpic = ({head, sub, variant, button_text, button_link}: Props)
                     {sub}
                 </p>
             }
-            {(button_text && button_link) &&
+            {(button_id && button_text) ?
+                <ButtonCommon id={button_id} variant="primary">
+                    {button_text}
+                </ButtonCommon>
+                : (button_text && button_link) &&
                 <Link target="_blank" href={button_link} className="mr-3">
                     <ButtonCommon variant="primary">
                         {button_text}
@@ -34,7 +38,8 @@ interface Props {
     sub?: string;
     variant?: string;
     button_text?: string;
-    button_link?: string
+    button_link?: string;
+    button_id?: string
 }
 
 export default ScopeHeadersEpic
