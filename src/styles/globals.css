@@ -234,13 +234,13 @@ body {
     position: relative;
 }
 
-.extent-list-epic li, * li {
+.extent-list-epic li, .tab-group-outer li {
     margin-bottom: 10px;
     padding-left: 36px;
     padding-top: 5px;
 }
 
-.extent-list-epic li:before, * li:before  {
+.extent-list-epic li:before, .tab-group-outer li:before  {
     content: '';
     width: 28px;
     height: 28px;
