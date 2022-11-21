@@ -53,7 +53,7 @@ const Home: NextPage<Props> = (
             
              <ScopeHeadersEpic
                 variant="mb-12"
-                head={value?.attributes.txt_kapsam}
+                head={siteGeneral?.attributes.txt_kapsam}
                 sub="Blockchain ekosisteminde yer alan yaratıcı ve geliştiricilerle iş modelini blockchain temelli teknolojiler ile güçlendirmek isteyen iş geliştirme uzmanları için yepyeni bir deneyim sunuyoruz."
             />
             
