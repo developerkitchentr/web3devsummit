@@ -14,9 +14,9 @@ export const createAxios = () => axios.create({
 const PREFIX = "/api"
 
 export const API_PATHS = {
-    mainContent: `${PREFIX}/main-contents?populate=*`,
-    sponsors: `${PREFIX}/sponsors?populate[1]=sponsors.logo`,
-    tabContent: `${PREFIX}/tab-contents?populate=*`,
-    siteGeneral: `${PREFIX}/site-dictionary`,
-    panelists: `${PREFIX}/panelists?populate=*`
+    mainContent: (locale: string) => `${PREFIX}/main-contents?locale=${locale}&populate=*`,
+    sponsors: (locale: string) => `${PREFIX}/sponsors?locale=${locale}&populate[1]=sponsors.logo`,
+    tabContent: (locale: string) => `${PREFIX}/tab-contents?locale=${locale}&populate=*`,
+    siteGeneral: (locale: string) => `${PREFIX}/site-dictionary?locale=${locale}&`,
+    panelists: (locale: string) => `${PREFIX}/panelists?locale=${locale}&populate=*`
 }

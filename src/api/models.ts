@@ -96,7 +96,8 @@ export interface Attributes {
     bitcoin_wallet_address: string,
     ethereum_wallet_address: string,
     solana_wallet_address: string,
-    avalache_wallet_address: string
+    avalache_wallet_address: string,
+    link_gonullumuz_olun: string
 }
 
 /* ----------------------------------------------------------------------------------  PanelistData */

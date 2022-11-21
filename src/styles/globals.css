@@ -86,6 +86,14 @@ body {
     backdrop-filter: blur(5px);
 }
 
+.lang-button-outer > .w-fit > button {
+    color: #fff;
+    background: linear-gradient(50deg, #5920AF 10%, #6A2ECA 17%, #7739E0 24%, #8041EF 32%, #8646F8 41%, #8848FB 55%, #A97FFB 100%);
+    box-shadow: inset -4px 4px 22px rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(5px);
+    margin-left: 15px;
+}
+
 .button-common.secondary {
     border-radius: 10px;
     background-clip: padding-box;
