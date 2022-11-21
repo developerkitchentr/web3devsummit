@@ -1,8 +1,9 @@
 import ExtentListEpic, { ListItem } from "./extent-list.epic";
 import ExtentCellImageCommon from "../common/extent-cell-image.common";
+import ReactMarkdown from "react-markdown";
 
 interface Props {
-    extent_list: ListItem[];
+    extent_list: string;
     extent_head: string;
     extent_image: string;
     extent_icon: string

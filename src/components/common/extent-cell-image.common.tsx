@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {getImageSrc} from "../../helper";
 
 interface Props {
     src: string;
@@ -8,7 +9,7 @@ interface Props {
 const ExtentCellImageCommon = ({ src, variant }: Props) => {
     return (
         <div className={ `extent-cell-image-common ${ variant }` }>
-            <Image className="w-full" src={ src } alt="" width={ 1100 } height={ 900 }/>
+            <Image className="w-full" src={ getImageSrc(src) } alt="" width={ 1100 } height={ 900 }/>
         </div>
     )
 }

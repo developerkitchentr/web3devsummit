@@ -1,60 +1,45 @@
 import ScopeHeadersEpic from "../epic/scope-headers.epic";
 import CardEpic from "../epic/card.epic";
+import {useContext} from "react";
+import AppContext from "../../context/site-context";
 
 const classNames = {
-    root: 'grid grid-cols-1 md:grid-cols-2 gap-6 join-team-scope-legendary'
+    root: 'grid grid-cols-1 md:grid-cols-2 gap-6 join-team-scope-legendary pt-3'
 }
 
 
 const JoinTeamScopeLegendary = () => {
+    const value = useContext(AppContext);
     return (
-        <div className={ classNames.root }>
+        <div id="volunteer" className={ classNames.root }>
             <ScopeHeadersEpic
-                head="Gönüllü Ekibe Katıl"
-                sub="Web3 geliştirici ekosistemini bir araya getirecek bu etkinlikte sen de gönüllü ol, online ve offline bir çok etkinlikte görev alma şansını yakala"
+                head={value?.attributes.txt_header_gonullu_ekibe_katil}
+                sub={value?.attributes.txt_subheader_gonullu_ekibe_katil}
                 variant="secondary"
-                button_text="Hemen Başvur"
+                button_text={value?.attributes.txt_btn_gonullu_basvur}
             />
             <CardEpic
                 variant="primary"
                 image="/images/join-team-01.jpg"
                 content={{
-                    number: '01',
-                    name: 'Neden',
-                    list: [
-                        {name: 'Network'},
-                        {name: 'Katılım sertifikası'},
-                        {name: 'Etkinlik Deneyimi'},
-                        {name: 'After Party'}
-                    ]
+                    name: value?.attributes.txt_header_gonullu_neden,
+                    list: value?.attributes.txt_gonullu_neden_icerik
                 }}
             />
             <CardEpic
                 variant="primary"
                 image="/images/join-team-02.jpg"
                 content={{
-                    number: '02',
-                    name: 'Görevler',
-                    list: [
-                        {name: 'Etkinlik alanı görevleri'},
-                        {name: 'Sosyal Medya Yönetimi'},
-                        {name: 'Online Röportajlar'},
-                        {name: 'İçerik Sorumlusu'}
-                    ]
+                    name: value?.attributes.txt_header_gonullu_gorevler,
+                    list: value?.attributes.txt_gonullu_gorevler_icerik
                 }}
             />
             <CardEpic
                 variant="primary"
                 image="/images/join-team-03.jpg"
                 content={{
-                    number: '03',
-                    name: 'Süreç',
-                    list: [
-                        {name: 'Başvuru'},
-                        {name: 'Değerlendirme'},
-                        {name: 'Mülakat'},
-                        {name: 'Görevlendirme'}
-                    ]
+                    name: value?.attributes.txt_header_gonullu_surec,
+                    list: value?.attributes.txt_gonullu_surec_icerik
                 }}
             />
         </div>
