@@ -12,7 +12,6 @@ interface Props {
 }
 
 const OurSupportersScopeLegendary = ({sponsors}: Props) => {
-    console.log(sponsors)
     return (
         <div id="supporters" className={classNames.root}>
             {sponsors?.map(({id, attributes}) => (

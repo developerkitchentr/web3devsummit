@@ -7,22 +7,19 @@ import ExtentScopeLegendary from "../components/legendary/extent-scope.legendary
 import MainSliderLegendary from "../components/legendary/main-slider.legendary";
 import PanelistScopeLegendary from "../components/legendary/panelist-scope.legendary";
 import JoinTeamScopeLegendary from "../components/legendary/join-team-scope.legendary";
-import SupportUsScopeLegendary from "../components/legendary/support-us-scope.legendary";
 import TicketScopeLegendary from "../components/legendary/ticket-scope.legendary";
 import OurSupportersScopeLegendary from "../components/legendary/our-supporters-scope.legendary";
 import FooterLegendary from "../components/legendary/footer.legendary";
 import ScopeHeadersEpic from "../components/epic/scope-headers.epic";
 import { fetches } from "../api/fetches";
 import { DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel } from "../api/models";
-import { Tabs } from "flowbite-react"
 import ReactMarkdown from "react-markdown";
 import AppContext from "../context/site-context";
-import Script from 'next/script'
-
-import { useContext, useEffect } from "react";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 import Image from "next/image";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import { copy } from "../utils/helpers";
 
 interface Props {
     mainContents: TopLevel[],
@@ -43,19 +40,6 @@ const Home: NextPage<Props> = (
         locale
     }
 ) => {
-    const { pathname } = useRouter();
-
-    const copy = (value: string) => {
-        navigator.clipboard.writeText(value);
-    }
-
-    useEffect(() => {
-        // some browsers (like safari) may require a timeout to delay calling this
-        // function after a page has loaded; otherwise, it may not update the position
-        window.scrollTo(0, 0);
-    }, [pathname]);
-
-
     return (
         <AppContext.Provider value={ siteGeneral }>
             <Head>
@@ -77,28 +61,32 @@ const Home: NextPage<Props> = (
                     />
                     { tabContents?.length > 0 &&
 						<div className="tab-group-outer">
-							<Tabs.Group className="app-tabs">
-                                { tabContents?.sort((a, b) => a.attributes.list_order - b.attributes.list_order)
-                                    .map(({ id, attributes }) => (
-                                        <Tabs.Item
-                                            key={ id }
-                                            title={ attributes.title }
-                                        >
-                                            <div className="extent-cell-epic sm:flex sm:flex-row mb-5">
-                                                <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5">
-                                                    <ReactMarkdown>
-                                                        { attributes.left_content }
-                                                    </ReactMarkdown>
-                                                </div>
-                                                <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5">
-                                                    <ReactMarkdown>
-                                                        { attributes.right_content }
-                                                    </ReactMarkdown>
-                                                </div>
+							<Tabs
+								defaultActiveKey={tabContents[0].attributes.title}
+								id="uncontrolled-tab-example"
+								className="app-tabs"
+							>
+                                { tabContents.map(({ id, attributes }) => (
+                                    <Tab
+                                        eventKey={ attributes.title }
+                                        key={ id }
+                                        title={ attributes.title }
+                                    >
+                                        <div className="extent-cell-epic sm:flex sm:flex-row mb-5">
+                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5 rmark">
+                                                <ReactMarkdown>
+                                                    { attributes.left_content }
+                                                </ReactMarkdown>
                                             </div>
-                                        </Tabs.Item>
-                                    )) }
-							</Tabs.Group>
+                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5 rmark">
+                                                <ReactMarkdown>
+                                                    { attributes.right_content }
+                                                </ReactMarkdown>
+                                            </div>
+                                        </div>
+                                    </Tab>
+                                )) }
+							</Tabs>
 						</div>
                     }
                     <ExtentScopeLegendary mainContents={ mainContents }/>

@@ -1,5 +1,4 @@
 import ListEpic from "../epic/list.epic";
-import { ROUTER_PATHS } from "../../constants/router-paths";
 import ButtonCommon from "../common/button.common";
 import LogoIcon from "../common/icons/logo.icon";
 import { useContext, useState } from "react";
@@ -17,7 +16,6 @@ const HeaderLegendary = ({ locale }: Props) => {
     }
 
     const handleOnClickLang = (locale: string) => {
-
         router.push("/" + locale, "/" + locale, {
             locale,
             scroll: false
