@@ -96,6 +96,7 @@ body {
     background: transparent;
     box-shadow: none;
     backdrop-filter: blur(5px);
+    border: none!important
 }
 
 .button-common.secondary {
@@ -247,7 +248,7 @@ body {
     padding-top: 5px;
 }
 
-.extent-list-epic li:before, .tab-group-outer li:before  {
+.extent-list-epic li:before, .rmark li:before  {
     content: '';
     width: 28px;
     height: 28px;
@@ -453,30 +454,43 @@ body {
     flex-wrap: wrap;
 }
 
-.app-tabs [role="tablist"] {
+.app-tabs {
     background: linear-gradient(112.12deg, rgba(255, 255, 255, 0.2) -0.8%, rgba(255, 255, 255, 0.1) 100%);
     box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(6px);
-    border-radius: 999px;
+    border-radius: 999px!important;
     border: 1px solid white;
     overflow: hidden;
     flex-wrap: nowrap;
-    padding: 4px 0;
+    padding: 4px;
 }
 
-.app-tabs [role="tablist"] button {
+.app-tabs li {
+    margin: 0;
+    padding: 0;
+}
+
+.app-tabs button {
     padding: 8px;
     width: 100%;
-    border-radius: 66px;
-    margin: 0 4px;
+    border-radius: 66px!important;
     border: none !important;
     outline: none !important;
 }
 
-.app-tabs [role="tablist"] button[aria-selected="true"] {
+.app-tabs {
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.app-tabs .nav-link {
+    color: #fff!important;
+}
+
+.app-tabs button.active {
     background: linear-gradient(92.25deg, #CF7BBE -0.27%, rgba(98, 68, 235, 0.75) 55.69%, rgba(96, 208, 223, 0.51) 99.7%);
     box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
-    color: #000;
+    color: #000!important;
 }
 
 .tab-group-outer {
@@ -484,10 +498,6 @@ body {
     border-radius: 20px;
     border: 1px solid #90ECFF;
     margin-bottom: 50px;
-}
-
-.app-tabs {
-    margin-top: -10px;
 }
 
 .c-fff {
