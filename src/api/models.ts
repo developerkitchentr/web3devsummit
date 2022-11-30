@@ -31,11 +31,12 @@ export interface DataSponsorsAttributes {
 
 export interface Sponsor {
     id:        number;
-    name:      string;
+    name:      string | null;
     list_order: number;
-    linkedin:  null;
-    twitter:   null;
+    linkedin:  string | null;
+    twitter:   string | null;
     logo:      ICON;
+    url: string | null
 }
 
 /* -------- TAB CONTENT -------- */

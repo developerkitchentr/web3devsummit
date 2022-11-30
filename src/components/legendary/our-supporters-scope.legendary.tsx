@@ -1,6 +1,7 @@
 import ImageListEpic from "../epic/image-list.epic";
 import {DataSponsors} from "../../api/models";
 import {getImageSrc} from "../../helper";
+import Link from "next/link";
 
 const classNames = {
     root: 'our-supporters-scope-legendary'
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const OurSupportersScopeLegendary = ({sponsors}: Props) => {
+    console.log(sponsors)
     return (
         <div id="supporters" className={classNames.root}>
             {sponsors?.map(({id, attributes}) => (
@@ -18,7 +20,8 @@ const OurSupportersScopeLegendary = ({sponsors}: Props) => {
                     key={id}
                     head={attributes.title}
                     image_list={attributes.sponsors?.map(s => ({
-                        url: getImageSrc(s.logo.data.attributes.url)
+                        image_url: getImageSrc(s.logo.data.attributes.url),
+                        link: s.url
                     }))}
                 />
             ))}

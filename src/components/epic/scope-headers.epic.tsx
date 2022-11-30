@@ -4,7 +4,7 @@ import Link from "next/link";
 const classNames = {
     scopeRoot: (variant: string = "") => `scope-headers ${variant}`,
     head: "text-4xl color-white mb-2",
-    sub: (button_text?: string) => `color-white text-xl ${button_text ? "mb-5" : ''}`
+    sub: (button_text?: string) => `color-white-05 text-lg ${button_text ? "mb-5" : ''}`
 }
 
 const ScopeHeadersEpic = ({head, sub, variant, button_text, button_link, button_id}: Props) => {
