@@ -17,6 +17,7 @@ const HeaderLegendary = ({ locale }: Props) => {
     }
 
     const handleOnClickLang = (locale: string) => {
+
         router.push("/" + locale, "/" + locale, {
             locale,
             scroll: false
@@ -35,8 +36,8 @@ const HeaderLegendary = ({ locale }: Props) => {
 								label={ locale }
 								dismissOnClick={ false }
 							>
-								<Dropdown.Item onClick={ () => handleOnClickLang("tr-TR") }>
-									tr-TR
+								<Dropdown.Item onClick={ () => handleOnClickLang("tr") }>
+									tr
 								</Dropdown.Item>
 								<Dropdown.Item onClick={ () => handleOnClickLang("en") }>
 									en
