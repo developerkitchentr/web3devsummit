@@ -16,7 +16,7 @@ const ImageListEpic = ({ head, image_list }: Props) => {
             <div className={ classNames.outer }>
                 { image_list.map((image, index) => (
                     image.link ?
-                        <Link href={ image.link } key={ `${ head.trim() }-0${ index }` }>
+                        <Link href={ image.link } key={ `${ head.trim() }-0${ index }` } target="_blank">
                             <PaperCommon variant="inline-block m-3">
                                 <Image
                                     className={ classNames.image }

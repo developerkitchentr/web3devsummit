@@ -19,9 +19,10 @@ import ReactMarkdown from "react-markdown";
 import AppContext from "../context/site-context";
 import Script from 'next/script'
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Image from "next/image";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 interface Props {
     mainContents: TopLevel[],
@@ -42,10 +43,18 @@ const Home: NextPage<Props> = (
         locale
     }
 ) => {
+    const { pathname } = useRouter();
 
     const copy = (value: string) => {
         navigator.clipboard.writeText(value);
     }
+
+    useEffect(() => {
+        // some browsers (like safari) may require a timeout to delay calling this
+        // function after a page has loaded; otherwise, it may not update the position
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
 
     return (
         <AppContext.Provider value={ siteGeneral }>
@@ -66,31 +75,32 @@ const Home: NextPage<Props> = (
                         head={ siteGeneral?.attributes.txt_kapsam }
                         sub={ siteGeneral?.attributes.txt_subheader_kapsam }
                     />
-
-                    <div className="tab-group-outer">
-                        <Tabs.Group className="app-tabs">
-                            { tabContents?.sort((a, b) => a.attributes.list_order - b.attributes.list_order)
-                                .map(({ id, attributes }) => (
-                                    <Tabs.Item
-                                        key={ id }
-                                        title={ attributes.title }
-                                    >
-                                        <div className="extent-cell-epic sm:flex sm:flex-row mb-5">
-                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5">
-                                                <ReactMarkdown>
-                                                    { attributes.left_content }
-                                                </ReactMarkdown>
+                    { tabContents?.length > 0 &&
+						<div className="tab-group-outer">
+							<Tabs.Group className="app-tabs">
+                                { tabContents?.sort((a, b) => a.attributes.list_order - b.attributes.list_order)
+                                    .map(({ id, attributes }) => (
+                                        <Tabs.Item
+                                            key={ id }
+                                            title={ attributes.title }
+                                        >
+                                            <div className="extent-cell-epic sm:flex sm:flex-row mb-5">
+                                                <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5">
+                                                    <ReactMarkdown>
+                                                        { attributes.left_content }
+                                                    </ReactMarkdown>
+                                                </div>
+                                                <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5">
+                                                    <ReactMarkdown>
+                                                        { attributes.right_content }
+                                                    </ReactMarkdown>
+                                                </div>
                                             </div>
-                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5">
-                                                <ReactMarkdown>
-                                                    { attributes.right_content }
-                                                </ReactMarkdown>
-                                            </div>
-                                        </div>
-                                    </Tabs.Item>
-                                )) }
-                        </Tabs.Group>
-                    </div>
+                                        </Tabs.Item>
+                                    )) }
+							</Tabs.Group>
+						</div>
+                    }
                     <ExtentScopeLegendary mainContents={ mainContents }/>
 
                     <PanelistScopeLegendary panelists={ panelists }/>
@@ -158,7 +168,7 @@ const Home: NextPage<Props> = (
 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const locale = "tr-TR" // context.locale ? (context.locale === "tr" ? "tr-TR" : "en") : "tr-TR";
+    const locale = context.locale ? (context.locale === "tr" ? "tr-TR" : "en") : "tr-TR";
     const mainContents = await fetches.getMainContents(locale)
     const sponsors = await fetches.getSponsors(locale)
     const tabContents = await fetches.getTabContents(locale)
@@ -172,7 +182,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             tabContents,
             siteGeneral,
             panelists,
-            locale
+            locale: context.locale || "tr"
         }
     }
 }
