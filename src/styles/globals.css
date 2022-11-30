@@ -485,6 +485,11 @@ body {
 
 .app-tabs .nav-link {
     color: #fff!important;
+    min-width: 100px;
+}
+
+.app-tabs .nav-item {
+    margin-right: 30px;
 }
 
 .app-tabs button.active {
@@ -574,9 +579,17 @@ body {
         display: none;
     }
 
-    .app-tabs [role="tablist"] {
-        border-radius: 20px;
+    .app-tabs {
+        border-radius: 20px!important;
         flex-wrap: wrap;
+    }
+
+    .app-tabs .nav-link {
+        min-width: auto;
+    }
+
+    .app-tabs .nav-item {
+        margin-right: 0px;
     }
 
 
