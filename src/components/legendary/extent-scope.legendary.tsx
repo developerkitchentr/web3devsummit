@@ -10,8 +10,6 @@ interface Props {
 }
 
 const ExtentScopeLegendary = ({mainContents}: Props) => {
-
-    const value = useContext(AppContext);
     return (
         <div id="extent" className="extent-scope-legendary">
             

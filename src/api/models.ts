@@ -101,7 +101,9 @@ export interface Attributes3 {
     link_gonullumuz_olun: string,
     txt_bize_destek_olun: string,
     txt_header_paneller: string,
-    txt_header_workshoplar: string
+    txt_header_workshoplar: string,
+    linkedin: string,
+    twitter: string
 }
 
 /* ----------------------------------------------------------------------------------  PanelistData */
@@ -113,6 +115,7 @@ export interface PanelistData {
 
 export interface Attributes4 {
     name_surname: string;
+    name_surname2: string;
     linkedin:     string;
     twitter:      string;
     job_title:    string;
