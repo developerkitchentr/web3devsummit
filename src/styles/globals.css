@@ -607,6 +607,11 @@ body {
     margin-bottom: 30px;
 }
 
+.text-xl {
+    font-size: 1.0rem!important;
+    line-height: 1.1rem!important;
+}
+
 @media (max-width: 1023.98px) {
     .cards-content-common li {
         padding-left: 0;
