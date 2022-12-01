@@ -23,7 +23,7 @@ export const sortByOrderDataPanels = (a: DataPanels, b: DataPanels) => {
 }
 
 export const sortByNamePanelistData = (a: PanelistData, b: PanelistData) => {
-    return a.attributes.name_surname.localeCompare(b.attributes.name_surname)
+    return a.attributes.name_surname2.localeCompare(b.attributes.name_surname2)
 }
 
 

@@ -11,8 +11,8 @@ const WorkshopItemsCommon = ({ src, title, desc }: Props) => {
 			        <Image src={ getImageSrc(getImageUrl(src)) } alt="" width={ 52 } height={ 52 }/>
 		        </div>
             }
-            <h6 className="text-2xl c-fff font-bold">{ title }</h6>
-            <p className="text-xl c-fff">{ desc }</p>
+            <h6 className="text-xl c-fff font-bold">{ title }</h6>
+            <p className="text-sm c-fff">{ desc }</p>
         </div>
     );
 };
