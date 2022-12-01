@@ -31,6 +31,7 @@ const PanelistScopeLegendary = ({panelists}: Props) => {
                             twitter_link: attributes.twitter,
                             linkedin_link: attributes.linkedin,
                         } }
+                        is_tmp={attributes.is_tmp}
                     />
                 )) }
             </div>
