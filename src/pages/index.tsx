@@ -95,7 +95,6 @@ const Home: NextPage<Props> = (
 						</div>
                     }
                     <ExtentScopeLegendary mainContents={ mainContents }/>
-
                     <PanelistScopeLegendary panelists={ panelists }/>
                     <PanelsScopeLegendary panels={panels} />
                     <WorkshopScopeLegendary workshops={workshops} />

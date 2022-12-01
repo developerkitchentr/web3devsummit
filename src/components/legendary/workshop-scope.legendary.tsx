@@ -3,6 +3,7 @@ import ScopeHeadersEpic from "../epic/scope-headers.epic";
 import AppContext from "../../context/site-context";
 import WorkshopItemsCommon from "../common/workshop-items.common";
 import { DataPanels } from "../../api/models";
+import { sortByOrderDataPanels } from "../../utils/helpers";
 
 const WorkshopScopeLegendary = ({workshops}: Props) => {
     const value = useContext(AppContext);
@@ -14,7 +15,7 @@ const WorkshopScopeLegendary = ({workshops}: Props) => {
                 head={ value?.attributes.txt_header_workshoplar }
             />
             <div className="panels-scope-cell">
-                {workshops?.map(({id, attributes}) => (
+                {workshops?.sort(sortByOrderDataPanels).map(({id, attributes}) => (
                     <WorkshopItemsCommon
                         key={id}
                         title={attributes.title}

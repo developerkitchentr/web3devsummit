@@ -1,3 +1,5 @@
+import { DataPanels, PanelistData } from "../api/models";
+
 export function copy(val: string) {
     let selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
@@ -11,3 +13,18 @@ export function copy(val: string) {
     document.execCommand('copy');
     document.body.removeChild(selBox);
 }
+
+export const sortByTitleDataPanels = (a: DataPanels, b: DataPanels) => {
+    return a.attributes.title.localeCompare(b.attributes.title)
+}
+
+export const sortByOrderDataPanels = (a: DataPanels, b: DataPanels) => {
+    return a.attributes.list_order - b.attributes.list_order
+}
+
+export const sortByNamePanelistData = (a: PanelistData, b: PanelistData) => {
+    return a.attributes.name_surname.localeCompare(b.attributes.name_surname)
+}
+
+
+

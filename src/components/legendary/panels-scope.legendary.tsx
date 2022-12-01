@@ -3,6 +3,7 @@ import AppContext from "../../context/site-context";
 import ScopeHeadersEpic from "../epic/scope-headers.epic";
 import PanelsItemsCommon from "../common/panels-items.common";
 import { DataPanels } from "../../api/models";
+import { sortByOrderDataPanels } from "../../utils/helpers";
 
 interface Props {
     panels: DataPanels[];
@@ -18,7 +19,7 @@ const PanelsScopeLegendary = ({panels}: Props) => {
                 head={ value?.attributes.txt_header_paneller }
             />
             <div className="panels-scope-cell">
-                {panels?.map(({id, attributes}) => (
+                {panels?.sort(sortByOrderDataPanels).map(({id, attributes}) => (
                     <PanelsItemsCommon
                         key={id}
                         desc={attributes.description}
