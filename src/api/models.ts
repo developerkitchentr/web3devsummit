@@ -42,10 +42,10 @@ export interface Sponsor {
 /* -------- TAB CONTENT -------- */
 export interface DataTabContent {
     id:         number;
-    attributes: Attributes;
+    attributes: Attributes2;
 }
 
-export interface Attributes {
+export interface Attributes2 {
     title:         string;
     list_order:     number;
     left_content:   string;
@@ -56,10 +56,10 @@ export interface Attributes {
 /* -------- SITE GENERAL ------- */
 export interface SiteGeneral {
     id:         number;
-    attributes: Attributes;
+    attributes: Attributes3;
 }
 
-export interface Attributes {
+export interface Attributes3 {
     txt_kapsam:                        string;
     txt_panelistler:                   string;
     txt_destekcilerimiz:               string;
@@ -99,17 +99,19 @@ export interface Attributes {
     solana_wallet_address: string,
     avalache_wallet_address: string,
     link_gonullumuz_olun: string,
-    txt_bize_destek_olun: string
+    txt_bize_destek_olun: string,
+    txt_header_paneller: string,
+    txt_header_workshoplar: string
 }
 
 /* ----------------------------------------------------------------------------------  PanelistData */
 
 export interface PanelistData {
     id:         number;
-    attributes: Attributes;
+    attributes: Attributes4;
 }
 
-export interface Attributes {
+export interface Attributes4 {
     name_surname: string;
     linkedin:     string;
     twitter:      string;
@@ -118,6 +120,19 @@ export interface Attributes {
     is_tmp:       boolean;
     photo: IMAGE
 }
+
+export interface DataPanels {
+    id:         number;
+    attributes: Attributes7;
+}
+
+export interface Attributes7 {
+    title:         string;
+    list_order:    number;
+    description:   string;
+    logo:          IMAGE;
+}
+
 
 
 /* ----------------------------------------------------------------------------------  GENERAL*/
@@ -128,23 +143,23 @@ export interface IMAGE {
 
 export interface DataIMAGE {
     id:         number;
-    attributes: Attributes3;
+    attributes: Attributes6;
 }
 
 export interface Formats {
-    thumbnail: Attributes2;
-    small:     Attributes2;
-    medium:    Attributes2;
-    large:     Attributes2;
+    thumbnail: Attributes5;
+    small:     Attributes5;
+    medium:    Attributes5;
+    large:     Attributes5;
 }
 
-export interface Attributes2 {
+export interface Attributes5 {
     width:    number;
     height:   number;
     url:      string;
 }
 
-export interface Attributes3 {
+export interface Attributes6 {
     width:    number;
     height:   number;
     formats: Formats;

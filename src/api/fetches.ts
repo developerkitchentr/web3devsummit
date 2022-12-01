@@ -1,5 +1,5 @@
 import {API_PATHS, createAxios} from "./constants";
-import {DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel} from "./models";
+import { DataPanels, DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel } from "./models";
 
 const getData = async (url: string) => {
     const res = await createAxios().get(url)
@@ -28,5 +28,13 @@ export const fetches = {
     async getPanelistsData(locale: string) {
         const url = API_PATHS.panelists(locale)
         return await getData(url) as PanelistData[]
+    },
+    async getPanels(locale: string) {
+        const url = API_PATHS.panels(locale)
+        return await getData(url) as DataPanels[]
+    },
+    async getWorkshops(locale: string) {
+        const url = API_PATHS.workshops(locale)
+        return await getData(url) as DataPanels[]
     }
 }

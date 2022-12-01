@@ -35,10 +35,10 @@ const HeaderLegendary = ({ locale }: Props) => {
 								dismissOnClick={ false }
 							>
 								<Dropdown.Item onClick={ () => handleOnClickLang("tr") }>
-									tr
+									TR
 								</Dropdown.Item>
 								<Dropdown.Item onClick={ () => handleOnClickLang("en") }>
-									en
+									EN
 								</Dropdown.Item>
 							</Dropdown>
                         }

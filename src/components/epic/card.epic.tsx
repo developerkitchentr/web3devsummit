@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const classNames = {
     cardEpic: (variants: string = '') => `card-epic ${ variants }`,
-    cardImage: 'card-epic-image'
+    cardImage: (is_tmp?: boolean) => `card-epic-image ${!is_tmp ? 'obj-cover' : ''}`
 }
 
-const CardEpic = ({ variant, content, image }: Props) => {
+const CardEpic = ({ variant, content, image, is_tmp }: Props) => {
     return (
         <div className={ classNames.cardEpic(variant) }>
             <Image
-                className={ classNames.cardImage }
+                className={ classNames.cardImage(is_tmp) }
                 src={ image }
                 width={ 500 }
                 alt=""
@@ -33,6 +33,7 @@ interface Props {
     variant?: string;
     content: Props_CardsContentCommon;
     image: string;
+    is_tmp?: boolean
 }
 
 export default CardEpic;

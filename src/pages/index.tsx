@@ -12,7 +12,7 @@ import OurSupportersScopeLegendary from "../components/legendary/our-supporters-
 import FooterLegendary from "../components/legendary/footer.legendary";
 import ScopeHeadersEpic from "../components/epic/scope-headers.epic";
 import { fetches } from "../api/fetches";
-import { DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel } from "../api/models";
+import { DataPanels, DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel } from "../api/models";
 import ReactMarkdown from "react-markdown";
 import AppContext from "../context/site-context";
 import Tab from 'react-bootstrap/Tab';
@@ -20,6 +20,8 @@ import Tabs from 'react-bootstrap/Tabs';
 import Image from "next/image";
 import Head from "next/head";
 import { copy } from "../utils/helpers";
+import PanelsScopeLegendary from "../components/legendary/panels-scope.legendary";
+import WorkshopScopeLegendary from "../components/legendary/workshop-scope.legendary";
 
 interface Props {
     mainContents: TopLevel[],
@@ -27,6 +29,8 @@ interface Props {
     tabContents: DataTabContent[],
     siteGeneral: SiteGeneral,
     panelists: PanelistData[],
+    panels: DataPanels[];
+    workshops: DataPanels[];
     locale: string
 }
 
@@ -37,7 +41,9 @@ const Home: NextPage<Props> = (
         tabContents,
         siteGeneral,
         panelists,
-        locale
+        locale,
+        panels,
+        workshops
     }
 ) => {
     return (
@@ -62,13 +68,12 @@ const Home: NextPage<Props> = (
                     { tabContents?.length > 0 &&
 						<div className="tab-group-outer">
 							<Tabs
-								defaultActiveKey={tabContents[0].attributes.title}
-								id="uncontrolled-tab-example"
+								defaultActiveKey={0}
 								className="app-tabs"
 							>
-                                { tabContents.map(({ id, attributes }) => (
+                                { tabContents.map(({ id, attributes }, index) => (
                                     <Tab
-                                        eventKey={ attributes.title }
+                                        eventKey={ index }
                                         key={ id }
                                         title={ attributes.title }
                                     >
@@ -92,6 +97,8 @@ const Home: NextPage<Props> = (
                     <ExtentScopeLegendary mainContents={ mainContents }/>
 
                     <PanelistScopeLegendary panelists={ panelists }/>
+                    <PanelsScopeLegendary panels={panels} />
+                    <WorkshopScopeLegendary workshops={workshops} />
                     <JoinTeamScopeLegendary/>
                     {/*<SupportUsScopeLegendary/>*/ }
                     <TicketScopeLegendary/>
@@ -162,6 +169,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const tabContents = await fetches.getTabContents(locale)
     const siteGeneral = await fetches.getSiteGeneral(locale)
     const panelists = await fetches.getPanelistsData(locale)
+    const panels = await fetches.getPanels(locale)
+    const workshops = await fetches.getWorkshops(locale)
 
     return {
         props: {
@@ -170,6 +179,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             tabContents,
             siteGeneral,
             panelists,
+            panels,
+            workshops,
             locale: context.locale || "tr"
         }
     }
