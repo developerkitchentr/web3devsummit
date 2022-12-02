@@ -17,7 +17,7 @@ const FooterLegendary = () => {
         <div className={ classNames.root }>
             <div className={ classNames.container }>
                 <LogoIcon/>
-                <ListEpic variant="mx-auto footer-list-epic"/>
+                <ListEpic variant="mx-auto footer-list-epic" footer={true}/>
                 <h2 className={ classNames.info }>
                     <div className="flex items-center justify-center">
                         <Link href={value?.attributes.linkedin || '/'} target="_blank">
