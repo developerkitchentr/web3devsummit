@@ -27,7 +27,7 @@ const HeaderLegendary = ({ locale }: Props) => {
             <div className="container mx-auto">
                 <div className="flex items-center justify-between">
                     <LogoIcon/>
-                    <ListEpic menuOpened={ menuOpened } variant="ml-auto header-nav"/>
+                    <ListEpic menuOpened={ menuOpened } menuCloser={() => menuOpener(false)} variant="ml-auto header-nav"/>
                     <div className="flex items-center lang-button-outer">
                         { value &&
 							<Dropdown
