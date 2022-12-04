@@ -66,33 +66,35 @@ const Home: NextPage<Props> = (
                         sub={ siteGeneral?.attributes.txt_subheader_kapsam }
                     />
                     { tabContents?.length > 0 &&
-						<div className="tab-group-outer">
-							<Tabs
-								defaultActiveKey={0}
-								className="app-tabs"
-							>
-                                { tabContents.map(({ id, attributes }, index) => (
-                                    <Tab
-                                        eventKey={ index }
-                                        key={ id }
-                                        title={ attributes.title }
-                                    >
-                                        <div className="extent-cell-epic sm:flex sm:flex-row mb-5">
-                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5 rmark">
-                                                <ReactMarkdown>
-                                                    { attributes.left_content }
-                                                </ReactMarkdown>
+						<div className="tab-group-cell">
+                            <div className="tab-group-outer">
+                                <Tabs
+                                    defaultActiveKey={0}
+                                    className="app-tabs"
+                                >
+                                    { tabContents.map(({ id, attributes }, index) => (
+                                        <Tab
+                                            eventKey={ index }
+                                            key={ id }
+                                            title={ attributes.title }
+                                        >
+                                            <div className="extent-cell-epic sm:flex sm:flex-row mb-5">
+                                                <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5 rmark">
+                                                    <ReactMarkdown>
+                                                        { attributes.left_content }
+                                                    </ReactMarkdown>
+                                                </div>
+                                                <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5 rmark">
+                                                    <ReactMarkdown>
+                                                        { attributes.right_content }
+                                                    </ReactMarkdown>
+                                                </div>
                                             </div>
-                                            <div className="basis-1/1 sm:basis-1/2 px-3 c-fff mb-5 rmark">
-                                                <ReactMarkdown>
-                                                    { attributes.right_content }
-                                                </ReactMarkdown>
-                                            </div>
-                                        </div>
-                                    </Tab>
-                                )) }
-							</Tabs>
-						</div>
+                                        </Tab>
+                                    )) }
+                                </Tabs>
+                            </div>
+                        </div>
                     }
                     <ExtentScopeLegendary mainContents={ mainContents }/>
                     <PanelistScopeLegendary panelists={ panelists }/>
