@@ -35,10 +35,13 @@ const ListEpic = ({ variant = '', menuOpened, footer, menuCloser }: Props) => {
                             <ListItemCommon href="#supporters" onClick={menuCloser}>
                                 { value?.attributes.txt_destekcilerimiz }
                             </ListItemCommon>
+                            <ListItemCommon target={'_blank'} href={value?.attributes.link_whitepaper} onClick={menuCloser}>
+                                Whitepaper
+                            </ListItemCommon>
                             <ListItemCommon href="#ticket" onClick={menuCloser}>
                                 { value?.attributes.txt_bilet }
                             </ListItemCommon>
-                            <ListItemCommon href="#volunteer" onClick={menuCloser}>
+                            <ListItemCommon onClick={menuCloser} href="#volunteer">
                                 { value?.attributes.txt_gonullu_ol }
                             </ListItemCommon>
                         </>

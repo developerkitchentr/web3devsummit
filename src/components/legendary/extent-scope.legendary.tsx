@@ -1,9 +1,6 @@
-import ScopeHeadersEpic from "../epic/scope-headers.epic";
 import ExtentCellEpic from "../epic/extent-cell.epic";
 import {TopLevel} from "../../api/models";
 import {getImageUrl} from "../../helper";
-import AppContext from "../../context/site-context";
-import {useContext} from "react";
 
 interface Props {
     mainContents: TopLevel[]
@@ -11,7 +8,7 @@ interface Props {
 
 const ExtentScopeLegendary = ({mainContents}: Props) => {
     return (
-        <div id="extent" className="extent-scope-legendary">
+        <div className="extent-scope-legendary">
             
            {/* <div className="mb-12">
                 <button className="button-common primary mx-auto">Daha fazla bilgi edin</button>
