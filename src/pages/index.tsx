@@ -2,7 +2,6 @@ import type { GetServerSideProps, NextPage } from 'next';
 import HeaderLegendary from "../components/legendary/header.legendary";
 import MainLegendary from "../components/legendary/main.legendary";
 import MainBannerEpic from "../components/epic/main-banner.epic";
-import WhitePaperEpic from "../components/epic/white-paper.epic";
 import ExtentScopeLegendary from "../components/legendary/extent-scope.legendary";
 import MainSliderLegendary from "../components/legendary/main-slider.legendary";
 import PanelistScopeLegendary from "../components/legendary/panelist-scope.legendary";
@@ -58,12 +57,12 @@ const Home: NextPage<Props> = (
             <MainLegendary>
                 <>
                     <MainSliderLegendary/>
-                    <WhitePaperEpic/>
-
+                    {/*<WhitePaperEpic/>*/}
                     <ScopeHeadersEpic
                         variant="mb-12"
                         head={ siteGeneral?.attributes.txt_kapsam }
                         sub={ siteGeneral?.attributes.txt_subheader_kapsam }
+                        id="extent"
                     />
                     { tabContents?.length > 0 &&
 						<div className="tab-group-cell">

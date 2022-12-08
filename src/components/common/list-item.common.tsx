@@ -4,19 +4,21 @@ import { memo } from "react";
 interface Props {
     href?: string;
     children: string;
-    onClick?: () => void
+    onClick?: () => void;
+    target?: string
 }
 
 const ListItemCommon = (
     {
         href,
         children,
-        onClick
+        onClick,
+        target
     }: Props
 ) => {
     return (
         <li className="list-item-common" onClick={onClick}>
-            { href ? <Link href={ href }>{ children }</Link> : children }
+            { href ? <Link href={ href } target={target}>{ children }</Link> : children }
         </li>
     )
 }
