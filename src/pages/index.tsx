@@ -11,7 +11,7 @@ import OurSupportersScopeLegendary from "../components/legendary/our-supporters-
 import FooterLegendary from "../components/legendary/footer.legendary";
 import ScopeHeadersEpic from "../components/epic/scope-headers.epic";
 import { fetches } from "../api/fetches";
-import { DataPanels, DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel } from "../api/models";
+import {DataPanels, DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel, Volunteers} from "../api/models";
 import ReactMarkdown from "react-markdown";
 import AppContext from "../context/site-context";
 import Tab from 'react-bootstrap/Tab';
@@ -21,6 +21,8 @@ import Head from "next/head";
 import { copy } from "../utils/helpers";
 import PanelsScopeLegendary from "../components/legendary/panels-scope.legendary";
 import WorkshopScopeLegendary from "../components/legendary/workshop-scope.legendary";
+import ContentScopeLegendary from "../components/legendary/content-scope.legendary";
+import VolunteerScopeLegendary from "../components/legendary/volunteer-scope.legendary";
 
 interface Props {
     mainContents: TopLevel[],
@@ -30,6 +32,7 @@ interface Props {
     panelists: PanelistData[],
     panels: DataPanels[];
     workshops: DataPanels[];
+    volunteers: Volunteers[],
     locale: string
 }
 
@@ -42,7 +45,8 @@ const Home: NextPage<Props> = (
         panelists,
         locale,
         panels,
-        workshops
+        workshops,
+        volunteers
     }
 ) => {
     return (
@@ -52,8 +56,6 @@ const Home: NextPage<Props> = (
             </Head>
             <HeaderLegendary locale={ locale }/>
             <MainBannerEpic/>
-
-
             <MainLegendary>
                 <>
                     <MainSliderLegendary/>
@@ -99,6 +101,8 @@ const Home: NextPage<Props> = (
                     <PanelistScopeLegendary panelists={ panelists }/>
                     <PanelsScopeLegendary panels={panels} />
                     <WorkshopScopeLegendary workshops={workshops} />
+                    <ContentScopeLegendary siteGeneral={siteGeneral} />
+                    <VolunteerScopeLegendary volunteers={volunteers} />
                     <JoinTeamScopeLegendary/>
                     {/*<SupportUsScopeLegendary/>*/ }
                     <TicketScopeLegendary/>
@@ -171,6 +175,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const panelists = await fetches.getPanelistsData(locale)
     const panels = await fetches.getPanels(locale)
     const workshops = await fetches.getWorkshops(locale)
+    const volunteers = await fetches.getVolunteers(locale)
 
     return {
         props: {
@@ -181,6 +186,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             panelists,
             panels,
             workshops,
+            volunteers,
             locale: context.locale || "tr"
         }
     }

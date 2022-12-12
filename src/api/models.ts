@@ -103,7 +103,33 @@ export interface Attributes3 {
     txt_header_paneller: string,
     txt_header_workshoplar: string,
     linkedin: string,
-    twitter: string
+    twitter: string,
+    venue_header: string,
+    venue_subheader: string,
+    venue_description: string,
+    venue_address: string,
+    venue_coordinate: string,
+    venue_images: {
+        data: DataIMAGE[]
+    },
+    txt_menu_mekan: string,
+    txt_directions: string
+}
+
+/* ----------------------------------------------------------------------------------  VolunteersData */
+
+export interface Volunteers {
+    id:         number;
+    attributes: VolunteersAttributes;
+}
+
+export interface VolunteersAttributes {
+    name_surname:  string;
+    name_surname2: string;
+    linkedin:      string;
+    twitter:       string;
+    job_title:     string;
+    photo:         IMAGE;
 }
 
 /* ----------------------------------------------------------------------------------  PanelistData */
