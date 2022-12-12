@@ -26,8 +26,8 @@ html, body {
 
 html, body {
     overflow-x: hidden;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
 }
 
@@ -659,18 +659,40 @@ a:hover, a:focus {
 }
 
 .volunteer-cell {
-    width: 100%;
+    width: 290px;
+    height: 290px;
     border-radius: 50%;
     position: relative;
+    margin: 0 auto;
 }
 
 .volunteer-cell:before {
     content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 1px solid;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #90ECFF 0%, #4B79FF 26%, #8848FB 52%, #D343FF 79%, #FFA7FF 100%);
+    z-index: -1;
 }
 
 .volunteer-cell img {
     height: 100%;
     object-fit: cover;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+
+@media (max-width: 1279.98px) {
+    .volunteer-cell {
+        width: 220px;
+        height: 220px;
+    }
 }
 
 @media (max-width: 1023.98px) {
