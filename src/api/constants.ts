@@ -18,7 +18,7 @@ export const API_PATHS = {
     sponsors: (locale: string) => `${PREFIX}/sponsors?locale=${locale}&populate[1]=sponsors.logo`,
     tabContent: (locale: string) => `${PREFIX}/tab-contents?locale=${locale}&populate=*`,
     siteGeneral: (locale: string) => `${PREFIX}/site-dictionary?locale=${locale}&populate=*`,
-    panelists: (locale: string) => `${PREFIX}/panelists?locale=${locale}&populate=*`,
+    panelists: (locale: string) => `${PREFIX}/panelists?locale=${locale}&populate=*&pagination[pageSize]=50`,
     panels: (locale: string) => `${PREFIX}/panels?locale=${locale}&populate=*`,
     workshops: (locale: string) => `${PREFIX}/workshops?locale=${locale}&populate=*`,
     volunteerMentor: (locale: string) => `${PREFIX}/volunteer-mentors?locale=${locale}&populate=*`
