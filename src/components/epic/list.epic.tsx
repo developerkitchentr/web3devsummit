@@ -26,9 +26,9 @@ const ListEpic = ({ variant = '', menuOpened, footer, menuCloser }: Props) => {
                         </>
                         :
                         <>
-                            <ListItemCommon href="#extent" onClick={menuCloser}>
+                            {/*<ListItemCommon href="#extent" onClick={menuCloser}>
                                 { value?.attributes.txt_kapsam }
-                            </ListItemCommon>
+                            </ListItemCommon>*/}
                             <ListItemCommon href="#panelist" onClick={menuCloser}>
                                 { value?.attributes.txt_panelistler }
                             </ListItemCommon>
@@ -41,8 +41,11 @@ const ListEpic = ({ variant = '', menuOpened, footer, menuCloser }: Props) => {
                             <ListItemCommon href="#ticket" onClick={menuCloser}>
                                 { value?.attributes.txt_bilet }
                             </ListItemCommon>
-                            <ListItemCommon onClick={menuCloser} href="#volunteer">
+                            {/*<ListItemCommon onClick={menuCloser} href="#volunteer">
                                 { value?.attributes.txt_gonullu_ol }
+                            </ListItemCommon>*/}
+                            <ListItemCommon onClick={menuCloser} href="#content">
+                                { value?.attributes.txt_menu_mekan }
                             </ListItemCommon>
                         </>
                     }

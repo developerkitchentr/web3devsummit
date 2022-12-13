@@ -1,5 +1,5 @@
 import {API_PATHS, createAxios} from "./constants";
-import { DataPanels, DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel } from "./models";
+import {DataPanels, DataSponsors, DataTabContent, PanelistData, SiteGeneral, TopLevel, Volunteers} from "./models";
 
 const getData = async (url: string) => {
     const res = await createAxios().get(url)
@@ -36,5 +36,9 @@ export const fetches = {
     async getWorkshops(locale: string) {
         const url = API_PATHS.workshops(locale)
         return await getData(url) as DataPanels[]
+    },
+    async getVolunteers(locale: string) {
+        const url = API_PATHS.volunteerMentor(locale)
+        return await getData(url) as Volunteers[]
     }
 }

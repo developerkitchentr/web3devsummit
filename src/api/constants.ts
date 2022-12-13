@@ -21,4 +21,5 @@ export const API_PATHS = {
     panelists: (locale: string) => `${PREFIX}/panelists?locale=${locale}&populate=*`,
     panels: (locale: string) => `${PREFIX}/panels?locale=${locale}&populate=*`,
     workshops: (locale: string) => `${PREFIX}/workshops?locale=${locale}&populate=*`,
+    volunteerMentor: (locale: string) => `${PREFIX}/volunteer-mentors?locale=${locale}&populate=*`
 }
