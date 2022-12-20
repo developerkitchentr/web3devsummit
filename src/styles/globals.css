@@ -666,6 +666,26 @@ a:hover, a:focus {
     margin: 0 auto;
 }
 
+.volunteer-cell-content {
+    opacity: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #1b1458;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.volunteer-cell:hover .volunteer-cell-content {
+    opacity: 1;
+}
+
 .volunteer-cell:before {
     content: '';
     position: absolute;
@@ -679,7 +699,7 @@ a:hover, a:focus {
     z-index: -1;
 }
 
-.volunteer-cell img {
+.volunteer-cell > img {
     height: 100%;
     object-fit: cover;
     width: 100%;
