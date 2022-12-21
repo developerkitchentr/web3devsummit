@@ -510,7 +510,7 @@ body {
 
 .app-tabs button.active {
     background: linear-gradient(92.25deg, #CF7BBE -0.27%, rgba(98, 68, 235, 0.75) 55.69%, rgba(96, 208, 223, 0.51) 99.7%);
-    box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
     color: #000 !important;
 }
 
@@ -600,7 +600,7 @@ a:hover, a:focus {
     box-shadow: 0 0 22px 0 rgba(255, 255, 255, 0.4);
     text-align: center;
     padding: 20px;
-    margin: 10px;
+    margin: 10px 10px 30px 10px;
     width: 310px;
 }
 
@@ -672,7 +672,7 @@ a:hover, a:focus {
     right: 0;
     top: 0;
     bottom: 0;
-    background: #1b1458;
+    background: rgba(27, 20, 88, 0.85);
     color: #fff;
     display: flex;
     align-items: center;

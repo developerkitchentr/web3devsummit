@@ -101,8 +101,8 @@ const Home: NextPage<Props> = (
                     <PanelistScopeLegendary panelists={ panelists }/>
                     <PanelsScopeLegendary panels={panels} />
                     <WorkshopScopeLegendary workshops={workshops} />
-                    <ContentScopeLegendary siteGeneral={siteGeneral} />
                     <VolunteerScopeLegendary volunteers={volunteers} />
+                    <ContentScopeLegendary siteGeneral={siteGeneral} />
                     <JoinTeamScopeLegendary/>
                     {/*<SupportUsScopeLegendary/>*/ }
                     <TicketScopeLegendary/>
