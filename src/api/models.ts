@@ -113,7 +113,8 @@ export interface Attributes3 {
         data: DataIMAGE[]
     },
     txt_menu_mekan: string,
-    txt_directions: string
+    txt_directions: string,
+    txt_volunteer_header: string
 }
 
 /* ----------------------------------------------------------------------------------  VolunteersData */

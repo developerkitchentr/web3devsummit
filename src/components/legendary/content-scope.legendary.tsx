@@ -10,7 +10,6 @@ interface Props {
 }
 
 const ContentScopeLegendary = ({siteGeneral}: Props) => {
-    console.log(siteGeneral)
     return (
         <div id="content" className="pt-5">
             <ScopeHeadersEpic
@@ -52,11 +51,13 @@ const ContentScopeLegendary = ({siteGeneral}: Props) => {
                     )
                 })}
             </div>
-            <div className="flex items-center mb-14">
-                <Image src="/images/icons/location.svg" alt="" width={20} height={20}/>
-                <span className="c-fff mx-2">{siteGeneral?.attributes.venue_address}</span>
+            <div className="flex items-center flex-wrap mb-14">
+                <div className="flex items-center">
+                    <Image src="/images/icons/location.svg" alt="" width={20} height={20}/>
+                    <span className="c-fff mx-2">{siteGeneral?.attributes.venue_address}</span>
+                </div>
                 <Link href={`https://www.google.com/maps/?q=${siteGeneral?.attributes.venue_coordinate}`} target="_blank">
-                    <div className="txt-directions">
+                    <div className="txt-directions my-3">
                         <Image src="/images/icons/arrow.svg" alt="" width={24} height={24}/>
                         <span className="ml-3 c-fff">{siteGeneral?.attributes.txt_directions}</span>
                     </div>
