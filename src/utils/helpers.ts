@@ -1,4 +1,4 @@
-import {DataPanels, PanelistData, Volunteers} from "../api/models";
+import { DataPanels, DataSponsors, PanelistData, Volunteers } from "../api/models";
 
 export function copy(val: string) {
     let selBox = document.createElement('textarea');
@@ -28,6 +28,10 @@ export const sortByNamePanelistData = (a: PanelistData, b: PanelistData) => {
 
 export const sortByNameVolunteerData = (a: Volunteers, b: Volunteers) => {
     return a.attributes.name_surname2.localeCompare(b.attributes.name_surname2)
+}
+
+export const sortByListOrder = (a: DataSponsors, b: DataSponsors) => {
+    return a.attributes.list_order - b.attributes.list_order
 }
 
 
