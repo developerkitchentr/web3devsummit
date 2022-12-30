@@ -157,8 +157,6 @@ const Home: NextPage<Props> = (
                         </div>
                     </div>
                 </>
-
-
             </MainLegendary>
             <FooterLegendary/>
         </AppContext.Provider>

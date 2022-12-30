@@ -1,7 +1,7 @@
 import ImageListEpic from "../epic/image-list.epic";
 import {DataSponsors} from "../../api/models";
 import {getImageSrc} from "../../helper";
-import Link from "next/link";
+import { sortByListOrder } from "../../utils/helpers";
 
 const classNames = {
     root: 'our-supporters-scope-legendary'
@@ -14,7 +14,7 @@ interface Props {
 const OurSupportersScopeLegendary = ({sponsors}: Props) => {
     return (
         <div id="supporters" className={classNames.root}>
-            {sponsors?.map(({id, attributes}) => (
+            {sponsors?.sort(sortByListOrder).map(({id, attributes}) => (
                 <ImageListEpic
                     key={id}
                     head={attributes.title}
