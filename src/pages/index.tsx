@@ -23,6 +23,8 @@ import PanelsScopeLegendary from "../components/legendary/panels-scope.legendary
 import WorkshopScopeLegendary from "../components/legendary/workshop-scope.legendary";
 import ContentScopeLegendary from "../components/legendary/content-scope.legendary";
 import VolunteerScopeLegendary from "../components/legendary/volunteer-scope.legendary";
+import ButtonCommon from "../components/common/button.common";
+import Link from "next/link";
 
 interface Props {
     mainContents: TopLevel[],
@@ -59,6 +61,16 @@ const Home: NextPage<Props> = (
             <MainLegendary>
                 <>
                     <MainSliderLegendary/>
+                    <div className="flex items-center justify-center">
+                        <span className="mr-4 c-fff text-2xl">
+                            {locale === 'tr' ? 'Etkinlik Programı' : 'Agenta'}
+                        </span>
+                        <Link href="https://web3devsummit.istanbul/web3devsummitagenda.pdf" target="_blank">
+                            <ButtonCommon variant="primary">
+                                {locale === 'tr' ? 'İncele' : 'Review'}
+                            </ButtonCommon>
+                        </Link>
+                    </div>
                     {/*<WhitePaperEpic/>*/}
                     <ScopeHeadersEpic
                         variant="mb-12"
